@@ -43,8 +43,7 @@ namespace Frozen.Rotation
 
         public override void Pulse()
         {
-            if (!WoW.InGame) return;
-
+           
             /*if (WoW.TankId == 0)
             {
                 string currentTalents = WoW.Talent(1) + "" + WoW.Talent(2) + "" + WoW.Talent(3) + "" + WoW.Talent(4) + "" + WoW.Talent(5) + "" + WoW.Talent(6) + "" + WoW.Talent(7);
@@ -190,7 +189,7 @@ Spell,596,Prayer of Healing,D6
 Spell,64843,Divine Hymn,D0
 Spell,2060,Heal,D4
 Spell,139,Renew,D1
-Spell,47788,Guardian Spirit,F3
+Spell,47788,Guardian Spirit,F8
 Spell,200183,Apotheosis,D9
 Spell,208065,Light of Tuure,D7
 Spell,527,Purify,F7
