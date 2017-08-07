@@ -27,7 +27,7 @@ namespace Frozen.Rotation
 				
         public override void Pulse()
         {
-			//Log.Write("No of Enemies " + WoW.CountEnemyNPCsInRange, Color.Red);
+			Log.Write("No of Enemies " + WoW.PlayerSpec, Color.Red);
 			//Talent Checker
 				string currentTalents = WoW.Talent(1) + "" + WoW.Talent(2) + "" + WoW.Talent(3) + "" + WoW.Talent(4) + "" + WoW.Talent(5) + "" + WoW.Talent(6) + "" + WoW.Talent(7);
                 
@@ -187,5 +187,5 @@ Aura,1719,Battle Cry
 Aura,207982,Focused Rage
 Aura,845,Cleave
 Aura,772,Rend
-Aura,238147,Executioner’s Precision
+Aura,242188,Executioner’s Precision
 */
