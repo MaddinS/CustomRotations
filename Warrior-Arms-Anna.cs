@@ -100,8 +100,8 @@ namespace Frozen.Rotation
 					if (WoW.CanCast("Mortal Strike") 
 						&& !WoW.IsSpellOnCooldown("Mortal Strike") 
 						&& WoW.PlayerHasBuff("Shattered Defenses") 
-						&& WoW.PlayerHasBuff("Executioner’s Precision") 
-						&& WoW.PlayerBuffStacks("Executioner’s Precision") == 2)
+						&& WoW.TargetHasDebuff("Executioner’s Precision") 
+						&& WoW.TargetDebuffStacks("Executioner’s Precision") == 2)
                         {
                             WoW.CastSpell("Mortal Strike");
                             return;
