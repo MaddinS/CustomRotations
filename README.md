@@ -7,3 +7,7 @@ but please ensure you obfuscate your code (*and test the obfuscated version!!!*)
 # Plugins for Frozen
 Labeled as per **Plugin-WhatItDoes-Author.cs**, *Author must please be your Discord name.*<br>
 
+# Additional Information
+If you would like your plugin / rotation listed on the system for users to load once you<br>
+consider it stable enough please put it in the 'LoadMe.txt' file rotations and plugins not in<br>
+this list will be skipped.
