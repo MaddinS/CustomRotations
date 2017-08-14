@@ -1,2 +1,5 @@
 Priest-Holy-Anna.cs
 Warrior-Arms-Anna.cs
+Druid-Restoration-Vectarius.dll
+Druid-Restoration-Vectarius.sb
+Hunter-BeastMastery-MooTauren.cs
