@@ -3,3 +3,5 @@ Warrior-Arms-Anna.cs
 Druid-Restoration-Vectarius.fzn
 Druid-Restoration-Vectarius.sb
 Hunter-BeastMastery-MooTauren.cs
+Hunter-BeastMastery-Vectarius.fzn
+Hunter-BeastMastery-Vectarius.sb
