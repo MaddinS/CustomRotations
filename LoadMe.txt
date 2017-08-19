@@ -5,5 +5,5 @@ Druid-Restoration-Vectarius.sb
 Hunter-BeastMastery-MooTauren.cs
 Hunter-BeastMastery-Vectarius.fzn
 Hunter-BeastMastery-Vectarius.sb
-Bundle-Tanks-Myrex.fzn
-Bundle-Tanks-Myrex.sb
+Bundles-Tanks-Myrex.fzn
+Bundles-Tanks-Myrex.sb
