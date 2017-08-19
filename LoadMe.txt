@@ -7,4 +7,3 @@ Hunter-BeastMastery-Vectarius.fzn
 Hunter-BeastMastery-Vectarius.sb
 Bundles-Tanks-Myrex.fzn
 Bundles-Tanks-Myrex.sb
-Plugin-MplusRaidInterrupter-Myrex.cs
