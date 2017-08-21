@@ -7,3 +7,5 @@ Hunter-BeastMastery-Vectarius.fzn
 Hunter-BeastMastery-Vectarius.sb
 Bundles-Tanks-Myrex.fzn
 Bundles-Tanks-Myrex.sb
+Monk-MistWeaver-Lhasse.fzn
+Monk-MistWeaver-Lhasse.sb
