@@ -9,3 +9,5 @@ Bundles-Tanks-Myrex.fzn
 Bundles-Tanks-Myrex.sb
 Monk-MistWeaver-Lhasse.fzn
 Monk-MistWeaver-Lhasse.sb
+Rogue-Assasination-Creepyjoker.fzn
+Rogue-Assasination-Creepyjoker.sb
