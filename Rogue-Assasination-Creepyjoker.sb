@@ -1,0 +1,29 @@
+/*
+[AddonDetails.db]
+AddonAuthor=CreepyJoker
+AddonName=Sucstobeyou
+WoWVersion=Legion - 70100
+[SpellBook.db]
+Spell,1943,Rupture,D2
+Spell,79140,Vendetta,D5
+Spell,245388,ToxicBl,D4
+Spell,1856,Vanish,V
+Spell,1329,Mutilate,D1
+Spell,703,Garrote,R
+Spell,192759,Kingsbane,D3
+Spell,32645,Envenom,Q
+Spell,51723,Fan Of Knives,X
+Aura,1943,Rupture
+Aura,1784,Stealth
+Aura,703,Garrote
+Aura,235027,Critbuff
+Aura,208693,FoK
+Aura,245388,ToxicBl
+Aura,1856,Vanish
+Aura,192425,Toxins
+Aura,32645,Envenom
+Aura,192759,Kingsbane
+Aura,200802,Agonizing Poison
+Aura,193641,Elaborate Planning
+Aura,79140,Vendetta
+*/
