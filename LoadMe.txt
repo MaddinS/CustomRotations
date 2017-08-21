@@ -11,3 +11,5 @@ Monk-MistWeaver-Lhasse.fzn
 Monk-MistWeaver-Lhasse.sb
 Rogue-Assasination-Creepyjoker.fzn
 Rogue-Assasination-Creepyjoker.sb
+Mage-Frost-Creepyjoker.fzn
+Mage-Frost-Creepyjoker.sb
