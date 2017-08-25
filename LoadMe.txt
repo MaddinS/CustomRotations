@@ -13,4 +13,3 @@ Mage-Frost-Creepyjoker.sb
 Warrior-Fury-Lelefi.cs
 DemonHunter-Havoc-Myrex.fzn
 DemonHunter-Havoc-Myrex.sb
-Plugin-MplusRaidInterrupter-Myrex.cs 
