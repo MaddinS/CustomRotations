@@ -1,3 +1,4 @@
+
 Priest-Holy-Anna.cs
 Warrior-Arms-Anna.cs
 Hunter-BeastMastery-MooTauren.cs
@@ -12,3 +13,4 @@ Mage-Frost-Creepyjoker.sb
 Warrior-Fury-Lelefi.cs
 DemonHunter-Havoc-Myrex.fzn
 DemonHunter-Havoc-Myrex.sb
+Plugin-MplusRaidInterrupter-Myrex.cs 
