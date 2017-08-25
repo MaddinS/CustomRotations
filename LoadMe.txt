@@ -14,4 +14,4 @@ Warrior-Fury-Lelefi.cs
 DemonHunter-Havoc-Myrex.fzn
 DemonHunter-Havoc-Myrex.sb
 Paladin-Holy-Lhasse.fzn
-Paladin-Holy-Lhasse
+Paladin-Holy-Lhasse.sb
