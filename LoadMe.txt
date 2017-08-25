@@ -13,3 +13,5 @@ Mage-Frost-Creepyjoker.sb
 Warrior-Fury-Lelefi.cs
 DemonHunter-Havoc-Myrex.fzn
 DemonHunter-Havoc-Myrex.sb
+Paladin-Holy-Lhasse.fzn
+Paladin-Holy-Lhasse
