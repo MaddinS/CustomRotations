@@ -1,4 +1,4 @@
-﻿/*
+/*
 [AddonDetails.db]
 AddonAuthor=Myrex
 AddonName=Frozen
@@ -6,7 +6,7 @@ WoWVersion=Legion - 70200
 [SpellBook.db]
 Spell,206491,Nemesis,E
 Spell,191427,Metamorphosis,F
-Spell,211048,ChaosBlades,T
+Spell,247938,ChaosBlades,T
 Spell,201467,FOTI,D3
 Spell,162794,ChaosStrike,D5
 Spell,201427,Annihilation,D5
@@ -17,5 +17,4 @@ Spell,210152,Deathsweep,D4
 Spell,198013,EyeBeam,D2
 Spell,183752,ConsumeMagic,R
 Aura,162264,Metamorphosis
-
 */
