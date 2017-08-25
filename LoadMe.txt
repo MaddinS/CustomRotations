@@ -1,10 +1,6 @@
 Priest-Holy-Anna.cs
 Warrior-Arms-Anna.cs
-Druid-Restoration-Vectarius.fzn
-Druid-Restoration-Vectarius.sb
 Hunter-BeastMastery-MooTauren.cs
-Hunter-BeastMastery-Vectarius.fzn
-Hunter-BeastMastery-Vectarius.sb
 Bundles-Tanks-Myrex.fzn
 Bundles-Tanks-Myrex.sb
 Monk-MistWeaver-Lhasse.fzn
