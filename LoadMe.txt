@@ -10,3 +10,5 @@ Rogue-Assasination-Creepyjoker.sb
 Mage-Frost-Creepyjoker.fzn
 Mage-Frost-Creepyjoker.sb
 Warrior-Fury-Lelefi.cs
+DemonHunter-Havoc-Myrex.fzn
+DemonHunter-Havoc-Myrex.sb
