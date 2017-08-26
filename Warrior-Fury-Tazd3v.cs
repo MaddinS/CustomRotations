@@ -132,7 +132,7 @@ namespace Frozen.Rotation
                             WoW.CastSpell("Whirlwind");
                             return;
                         }
-                        if (WoW.CanCast("Furious Slash") && WoW.IsSpellInRange("Furious Slash") && (WoW.SpellCooldownTimeRemaining("Raging Blow") > 0.5) && !WoW.CanCast("Rampage"))
+                        if (WoW.CanCast("Furious Slash") && WoW.IsSpellInRange("Furious Slash") && (WoW.SpellCooldownTimeRemaining("Raging Blow") > 0.5))
                         {
                             WoW.CastSpell("Furious Slash");
                             return;
