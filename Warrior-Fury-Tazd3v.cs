@@ -228,7 +228,7 @@ Spell,205545,OdynsFury,D7
 Spell,184364,Enraged Regeneration,D8
 Spell,97642,Commanding Shout,D9
 Spell,18499,Berserker Rage,D0
-Spell,6552,Pummel,-
+Spell,6552,Pummel,Y
 Spell,59752,Every Man For Himself,=
 Spell,1719,BattleCry,R
 Spell,107574,Avatar,T
