@@ -172,6 +172,11 @@ namespace Frozen.Rotation
             }
             if ((combatRoutine.Type == RotationType.AOE) || (combatRoutine.Type == RotationType.Cleave))
             {
+                if (WoW.CanCast("OdynsFury") && WoW.IsSpellInRange("OdynsFury") && (WoW.PlayerHasBuff("BattleCry") || WoW.HealthPercent < 10))
+                {
+                    WoW.CastSpell("OdynsFury");
+                    return;
+                }
                 if (!WoW.PlayerHasBuff("Meat-Cleaver"))
                 {
                     WoW.CastSpell("Whirlwind");
@@ -187,11 +192,7 @@ namespace Frozen.Rotation
                     WoW.CastSpell("Bloodthirst");
                     return;
                 }
-                if (WoW.CanCast("OdynsFury") && WoW.IsSpellInRange("OdynsFury") && (WoW.PlayerHasBuff("BattleCry") || WoW.HealthPercent < 10))
-                {
-                    WoW.CastSpell("OdynsFury");
-                    return;
-                }
+
                 if (WoW.CanCast("Bloodthirst") && WoW.IsSpellInRange("Bloodthirst") && WoW.PlayerHasBuff("Meat-Cleaver"))
                 {
                     WoW.CastSpell("Bloodthirst");
