@@ -1,5 +1,5 @@
 Priest-Holy-Anna.cs
-Warrior-Arms-Anna.cs
+Warrior-Arms-Myrex.cs 
 Hunter-BeastMastery-MooTauren.cs
 Bundles-Tanks-Myrex.fzn
 Bundles-Tanks-Myrex.sb
