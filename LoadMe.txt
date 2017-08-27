@@ -15,4 +15,3 @@ DemonHunter-Havoc-Myrex.sb
 Paladin-Holy-Lhasse.fzn
 Paladin-Holy-Lhasse.sb
 Warrior-Fury-Tazd3v.cs
-Plugin-mplusinterrupter-Myrex.cs
