@@ -61,19 +61,23 @@ namespace Frozen.Rotation
             bool IsInCombat = WoW.IsInCombat;
             bool TargetHasDoom = WoW.TargetHasDebuff("Doom");
             bool IsSpellInRange = WoW.IsSpellInRange("Doom");
+            bool PlayerHasBuffDemonicCalling = WoW.PlayerHasBuff("Demonic Calling");
+            bool PetHasBuffDemonicEmpowerment = WoW.PetHasBuff("Demonic Empowerment");
             int Mana = WoW.Mana;
             int HealthPercent = WoW.HealthPercent;
             int PetHealthPercent = WoW.PetHealthPercent;
             int CurrentSoulShards = WoW.CurrentSoulShards;
             int LastSpellCastedID = WoW.LastSpellCastedID;
+            int PetDemonicEmpowermentRemaining = WoW.PetBuffTimeRemaining("Demonic Empowerment");
+            int TargetDoomTimeRemaining = WoW.TargetDebuffTimeRemaining("Doom");
 
             //Keep a pet out
             if ((!HasPet || HasPet && PetHealthPercent == 0) && !IsMounted && !PlayerIsCasting && LastSpellCastedID != Felguard){
-                if (WoW.Talent(6) != 1){
+                if (Talents[3] != 1){
                     WoW.CastSpell("Felguard");
                     return;
                 }
-                if (WoW.Talent(6) == 1){
+                if (Talents[3] == 1){
                     WoW.CastSpell("Doomguard");
                     return;
                 }
@@ -123,18 +127,18 @@ namespace Frozen.Rotation
             if (WoW.RotationOn && !WoW.AoeOn && !WoW.CleaveOn){
                 if (HasTarget && TargetIsEnemy && IsInCombat && !PlayerIsCasting && !IsMounted && !IsMoving && IsSpellInRange)
                 {
-                    Log.Write("Current Doombolt cast speed: " + GetCastTime(1.5));
+                    Log.Write("Current Doombolt cast speed: " + GetCastTime(2));
                     //If consumption is ready combo up to get more demons out
                     if (WoW.CanCast("Talkiels Consumption")){
-                        //Doomguard + Dreadstalkers combo
-                        if (LastSpellCastedID == Doomguard && WoW.CanCast("Call Dreadstalkers") && (WoW.PlayerHasBuff("Demonic Calling") || CurrentSoulShards >= 2)){
+                        //Doomguard/Felguard + Dreadstalkers combo
+                        if ((LastSpellCastedID == Doomguard || LastSpellCastedID == Felguard) && WoW.CanCast("Call Dreadstalkers") && (PlayerHasBuffDemonicCalling || CurrentSoulShards >= 2)){
                             WoW.CastSpell("Call Dreadstalkers");
                             DreadStalkersSummoned();
                             return;
                         }
 
-                        //Doomguard + Hand of Guldan combo
-                        if (LastSpellCastedID == Doomguard && CurrentSoulShards >= 2 && WoW.CanCast("Hand of Guldan")){
+                        //Doomguard/Felguard + Hand of Guldan combo
+                        if ((LastSpellCastedID == Doomguard || LastSpellCastedID == Felguard) && CurrentSoulShards >= 2 && WoW.CanCast("Hand of Guldan")){
                             if (CurrentSoulShards > 4){
                             WoW.CastSpell("Hand of Guldan");
                             WildImpsSummoned(4);
@@ -147,14 +151,14 @@ namespace Frozen.Rotation
                         }
 
                         //Hand of Guldan + Dreadstalkers combo
-                        if (LastSpellCastedID == HandOfGuldan && WoW.CanCast("Call Dreadstalkers") && (WoW.PlayerHasBuff("Demonic Calling") || CurrentSoulShards >= 2)){
+                        if (LastSpellCastedID == HandOfGuldan && WoW.CanCast("Call Dreadstalkers") && (PlayerHasBuffDemonicCalling || CurrentSoulShards >= 2)){
                             WoW.CastSpell("Call Dreadstalkers");
                             DreadStalkersSummoned();
                             return;
                         }
 
                         //Demonic Empowerment
-                        if (WoW.CanCast("Demonic Empowerment") && LastSpellCastedID != DemonicEmpowerment && (!WoW.PetHasBuff("Demonic Empowerment") || WoW.PetBuffTimeRemaining("Demonic Empowerment") <= 200 || WoW.WasLastCasted("Call Dreadstalkers") || WoW.WasLastCasted("Grimoire: Felguard") || WoW.WasLastCasted("Doomguard") || WoW.WasLastCasted("Hand of Guldan"))){
+                        if (WoW.CanCast("Demonic Empowerment") && LastSpellCastedID != DemonicEmpowerment && (!PetHasBuffDemonicEmpowerment || PetDemonicEmpowermentRemaining <= 200 || LastSpellCastedID == CallDreadstalkers || LastSpellCastedID == GrimoireFelguard || LastSpellCastedID == Doomguard || LastSpellCastedID ==  HandOfGuldan)){
                             WoW.CastSpell("Demonic Empowerment");
                             return;
                         }
@@ -168,20 +172,20 @@ namespace Frozen.Rotation
                     
 
                     //Demonic Empowerment
-                    if (WoW.CanCast("Demonic Empowerment") && LastSpellCastedID != DemonicEmpowerment && (!WoW.PetHasBuff("Demonic Empowerment") || WoW.PetBuffTimeRemaining("Demonic Empowerment") <= 200 || LastSpellCastedID == CallDreadstalkers || LastSpellCastedID == GrimoireFelguard || LastSpellCastedID == Doomguard || LastSpellCastedID == HandOfGuldan)){
+                    if (WoW.CanCast("Demonic Empowerment") && LastSpellCastedID != DemonicEmpowerment && (!PetHasBuffDemonicEmpowerment || PetDemonicEmpowermentRemaining <= 200 || LastSpellCastedID == CallDreadstalkers || LastSpellCastedID == GrimoireFelguard || LastSpellCastedID == Doomguard || LastSpellCastedID ==  HandOfGuldan)){
                         WoW.CastSpell("Demonic Empowerment");
                         return;
                     }
 
                     //Dreadstalkers
-                    if (WoW.CanCast("Call Dreadstalkers") && (CurrentSoulShards >= 2 || WoW.PlayerHasBuff("Demonic Calling"))){
+                    if (WoW.CanCast("Call Dreadstalkers") && (CurrentSoulShards >= 2 || PlayerHasBuffDemonicCalling)){
                         WoW.CastSpell("Call Dreadstalkers");
                         DreadStalkersSummoned();
                         return;
                     }
 
                     //Hand of Guldan
-                    if (WoW.CanCast("Hand of Guldan") && (CurrentSoulShards >= 4 || (CurrentSoulShards >= 2 && WoW.TargetDebuffTimeRemaining("Doom") <= 200))){
+                    if (WoW.CanCast("Hand of Guldan") && (CurrentSoulShards >= 4 || (CurrentSoulShards >= 2 && TargetDoomTimeRemaining <= 200))){
                         if (CurrentSoulShards > 4){
                             WoW.CastSpell("Hand of Guldan");
                             WildImpsSummoned(4);
@@ -203,14 +207,14 @@ namespace Frozen.Rotation
             }
             if (WoW.AoeOn){
                 //Felstorm
-                if (WoW.CanCast("Felstorm") && WoW.PetHasBuff("Demonic Empowerment") && WoW.PetBuffTimeRemaining("Demonic Empowerment") >= 6){
+                if (WoW.CanCast("Felstorm") && PetHasBuffDemonicEmpowerment && WoW.PetDemonicEmpowermentRemaining >= 600){
                     WoW.CastSpell("Felstorm");
                     return;
                 }
             }
             if (WoW.CleaveOn){
                 //Felstorm
-                if (WoW.CanCast("Felstorm") && WoW.PetHasBuff("Demonic Empowerment") && WoW.PetBuffTimeRemaining("Demonic Empowerment") >= 6){
+                if (WoW.CanCast("Felstorm") && PetHasBuffDemonicEmpowerment && WoW.PetDemonicEmpowermentRemaining >= 600){
                     WoW.CastSpell("Felstorm");
                     return;
                 }
