@@ -207,14 +207,14 @@ namespace Frozen.Rotation
             }
             if (WoW.AoeOn){
                 //Felstorm
-                if (WoW.CanCast("Felstorm") && PetHasBuffDemonicEmpowerment && WoW.PetDemonicEmpowermentRemaining >= 600){
+                if (WoW.CanCast("Felstorm") && PetHasBuffDemonicEmpowerment && PetDemonicEmpowermentRemaining >= 600){
                     WoW.CastSpell("Felstorm");
                     return;
                 }
             }
             if (WoW.CleaveOn){
                 //Felstorm
-                if (WoW.CanCast("Felstorm") && PetHasBuffDemonicEmpowerment && WoW.PetDemonicEmpowermentRemaining >= 600){
+                if (WoW.CanCast("Felstorm") && PetHasBuffDemonicEmpowerment && PetDemonicEmpowermentRemaining >= 600){
                     WoW.CastSpell("Felstorm");
                     return;
                 }
@@ -254,7 +254,7 @@ namespace Frozen.Rotation
         }
 
         public void DreadStalkersSummoned (){
-            if (WoW.Talent(2) == 2){
+            if (Talents[1] == 2){
                 WildImpsSummoned(2);
             }
             Dreadstalkers += 2;
@@ -276,7 +276,6 @@ namespace Frozen.Rotation
 
         public bool GrimoireFelguardOut (){
             if (WoW.IsSpellOnCooldown("Grimoire: Felguard")){
-                Log.Write("Grimoire: Felguard CD time remaining: " + WoW.SpellCooldownTimeRemaining(111898));
                 int timeSinceCast = 9000 - WoW.SpellCooldownTimeRemaining(111898);
                 if (timeSinceCast > 2500){
                     return false;
@@ -288,7 +287,6 @@ namespace Frozen.Rotation
 
         public bool DoomguardOut (){
             if (WoW.IsSpellOnCooldown("Doomguard")){
-                Log.Write("Doomguard CD time remaining: " + WoW.SpellCooldownTimeRemaining(18540));
                 int timeSinceCast = 1800 - WoW.SpellCooldownTimeRemaining(18540);
                 if (timeSinceCast > 250){
                     return false;
@@ -302,16 +300,11 @@ namespace Frozen.Rotation
             int total = 0;
             if (GrimoireFelguardOut()){
                 total += 1;
-                Log.Write("Grimoire: Felguard out");
             }
             if (DoomguardOut()){
                 total += 1;
-                Log.Write("Doomguard out");
             }
             total += WildImps + Dreadstalkers;
-            Log.Write("Dreadstalkers out " + Dreadstalkers);
-            Log.Write("Wild Imps out " + WildImps);
-            Log.Write("Total Demons Out " + total);
             return total;
         }
     }
