@@ -100,8 +100,8 @@ namespace Frozen.Rotation
 					if (WoW.CanCast("Mortal Strike") 
 						&& !WoW.IsSpellOnCooldown("Mortal Strike") 
 						&& WoW.PlayerHasBuff("Shattered Defenses") 
-						&& WoW.TargetHasDebuff("Executionerâ€™s Precision") 
-						&& WoW.TargetDebuffStacks("Executionerâ€™s Precision") == 2)
+						&& WoW.TargetHasDebuff("ExecutionerÃ¢â‚¬â„¢s Precision") 
+						&& WoW.TargetDebuffStacks("ExecutionerÃ¢â‚¬â„¢s Precision") == 2)
                         {
                             WoW.CastSpell("Mortal Strike");
                             return;
@@ -165,7 +165,7 @@ namespace Frozen.Rotation
 [AddonDetails.db]
 AddonAuthor=Lesion
 AddonName=rotationface
-WoWVersion=Legion - 70200
+WoWVersion=Legion - 70300
 [SpellBook.db]
 Spell,12294,Mortal Strike,D1
 Spell,167105,Colossus Smash,D2
@@ -187,5 +187,5 @@ Aura,1719,Battle Cry
 Aura,207982,Focused Rage
 Aura,845,Cleave
 Aura,772,Rend
-Aura,242188,Executionerâ€™s Precision
+Aura,242188,ExecutionerÃ¢â‚¬â„¢s Precision
 */
