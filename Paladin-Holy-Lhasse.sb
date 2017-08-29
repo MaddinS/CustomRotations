@@ -2,7 +2,7 @@
 [AddonDetails.db]
 AddonAuthor=Lhasse
 AddonName=Frozen
-WoWVersion=Legion - 70200
+WoWVersion=Legion - 70300
 [SpellBook.db]
 Spell,20473,HolyShock,D3
 Spell,82326,HolyLight,D5
