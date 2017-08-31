@@ -43,6 +43,7 @@ namespace Frozen.Rotation
             WildImps = 0;
             Dreadstalkers = 0;
             Talents = new int[5];
+            GetCurrentTalents();
         }
 
         public override void Stop()
@@ -50,8 +51,6 @@ namespace Frozen.Rotation
         }
 
         public override void Pulse(){
-            GetCurrentTalents();
-
             bool HasPet = WoW.HasPet;
             bool IsMoving = WoW.IsMoving;
             bool IsMounted = WoW.IsMounted;
@@ -87,19 +86,16 @@ namespace Frozen.Rotation
                 WoW.CastSpell("Life Tap");
                 return;
             }
-
             //Health Funnel
             if (WoW.CanCast("Health Funnel") && PetHealthPercent <= 30 && !IsMoving && !IsMounted && HasPet){
                 WoW.CastSpell("Health Funnel");
                 return;
             }
-
             //Doom
             if (HasTarget && TargetIsEnemy && IsInCombat && !IsMounted && !TargetHasDoom){
                 WoW.CastSpell("Doom");
                 return;
             }
-
             // Cast Demonwrath when in combat and moving
             if (HasTarget && TargetIsEnemy && IsInCombat && WoW.CanCast("Demonwrath") && Mana > 40 && IsMoving && !IsMounted){
                 WoW.CastSpell("Demonwrath");
@@ -219,6 +215,14 @@ namespace Frozen.Rotation
                     return;
                 }
             }
+        }
+
+        public void OpeningRotationSingleTarget(){
+
+        }
+
+        public void OpeningRotationAOE(){
+
         }
 
         public void GetCurrentTalents(){
