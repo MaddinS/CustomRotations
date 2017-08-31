@@ -1,0 +1,19 @@
+/*
+[AddonDetails.db]
+AddonAuthor=Lhasse
+AddonName=Frozen
+WoWVersion=Legion - 70300
+[SpellBook.db]
+Spell,204147,Windburst,D3
+Spell,185358,AC,D2
+Spell,19434,AS,D1
+Spell,2643,MS,D4
+Spell,193526,TS,T
+Spell,185901,MarkedShot,D5
+Aura,223138,MarkingTargets
+Aura,185987,HuntersMark
+Aura,194594,LockandLoad
+Aura,187131,Vulnerable
+Aura,242243,T20
+Aura,193526,TS
+*/
