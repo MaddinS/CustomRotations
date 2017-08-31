@@ -59,7 +59,7 @@ namespace Frozen.Rotation
                     WoW.CastSpell("BattleCry");
                     return;
                 }
-                if (WoW.CanCast("Bloodthirst") && !WoW.PlayerHasBuff("Enrage") && WoW.PlayerHasBuff("BattleCry") && WoW.Rage < 85)
+                if (WoW.CanCast("Bloodthirst") && !WoW.PlayerHasBuff("Enrage") && !WoW.IsSpellOnCooldown("Bloodthirst"))
                 {
                     WoW.CastSpell("Bloodthirst");
                     return;
@@ -81,7 +81,7 @@ namespace Frozen.Rotation
                         return;
                     }
 
-		    if (WoW.CanCast("Rampage") && WoW.Rage == 100)
+		    if (WoW.CanCast("Rampage") && WoW.Rage >= 100)
                     {
                         WoW.CastSpell("Rampage");
                         return;
@@ -134,19 +134,23 @@ namespace Frozen.Rotation
 
             if (combatRoutine.Type == RotationType.AOE)
                 if (WoW.HasTarget && WoW.IsSpellInRange("Bloodthirst") && WoW.IsInCombat)
-                {
-                    if (WoW.CanCast("Raging Blow") && WoW.PlayerHasBuff("Enrage") && WoW.CountEnemyNPCsInRange < 4 || WoW.Rage <= 99 && WoW.IsSpellOnCooldown("Bloodthirst") && WoW.CanCast("Raging Blow"))
+                {	
+		    if (WoW.CanCast("Raging Blow") && WoW.PlayerHasBuff("Enrage") && WoW.CountEnemyNPCsInRange < 4 || WoW.Rage <= 99 && WoW.IsSpellOnCooldown("Bloodthirst") && WoW.CanCast("Raging Blow"))
                     {
                         WoW.CastSpell("Raging Blow");
                         return;
                     }
 
-		    if (WoW.CanCast("Rampage") && WoW.Rage == 100 && WoW.PlayerHasBuff("Meat-Cleaver"))
+		    if (WoW.CanCast("Rampage") && WoW.Rage >= 100 && WoW.PlayerHasBuff("Meat-Cleaver"))
                     {
                         WoW.CastSpell("Rampage");
                         return;
                     }
-
+		    if (WoW.CanCast("Whirlwind") && !WoW.PlayerHasBuff("Meat-Cleaver") || WoW.CanCast("Whirlwind") && WoW.PlayerHasBuff("Wrecking Ball"))
+                    {
+                        WoW.CastSpell("Whirlwind");
+                        return;
+		    }
 		    if (WoW.CanCast("Bloodthirst") && WoW.Rage < 100 && WoW.CountEnemyNPCsInRange < 8 && WoW.PlayerHasBuff("Meat-Cleaver") || WoW.CanCast("Bloodthirst") && !WoW.PlayerHasBuff("Enrage") && WoW.IsSpellOnCooldown("Raging Blow"))
                     {
                         WoW.CastSpell("Bloodthirst");
@@ -157,11 +161,7 @@ namespace Frozen.Rotation
                         WoW.CastSpell("Furious Slash");
                         return;
                     }
-		    if (WoW.CanCast("Whirlwind") && !WoW.PlayerHasBuff("Meat-Cleaver") || WoW.CanCast("Whirlwind") && WoW.PlayerHasBuff("Wrecking Ball"))
-                    {
-                        WoW.CastSpell("Whirlwind");
-                        return;
-		    }
+		    
 
                 }
             
@@ -175,9 +175,9 @@ namespace Frozen.Rotation
 
 /*
 [AddonDetails.db]
-AddonAuthor=Loodak
+AddonAuthor=Lelefi
 AddonName=Frozen
-WoWVersion=Legion - 70200
+WoWVersion=Legion - 70300
 [SpellBook.db]
 Spell,23881,Bloodthirst,D3
 Spell,85288,Raging Blow,D4
@@ -197,4 +197,5 @@ Aura,201009,Juggernaut
 Aura,206316,Massacre
 Aura,85739,Meat-Cleaver
 Aura,215570,Wrecking Ball
+Aura,215572,Frothing
 */
