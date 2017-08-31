@@ -36,9 +36,8 @@ namespace Frozen.Rotation
 
         public override void Initialize()
         {
-            Log.Write("Welcome to Arms Warrior", Color.Green);
-            Log.Write("Suggested build: 1332311", Color.Green);
-            Log.Write("Written based on this guide : http://tinyurl.com/jjowqs7 ", Color.Green);
+            Log.Write("Welcome to Fury Warrior", Color.Green);
+            Log.Write("Suggested build: 2x1x233", Color.Green);
         }
 
         public override void Stop()
