@@ -11,10 +11,13 @@ Spell,201467,FOTI,D3
 Spell,162794,ChaosStrike,D5
 Spell,201427,Annihilation,D5
 Spell,185123,ThrowGlaives,D1
+Spell,162243,DemonBite,D6
 Spell,188499,BladeDance,D4
 Spell,232893,Felblade,Q
 Spell,210152,Deathsweep,D4
 Spell,198013,EyeBeam,D2
 Spell,183752,ConsumeMagic,R
 Aura,162264,Metamorphosis
+Aura,247938,ChaosBlades
+Aura,206491,Nemesis
 */
