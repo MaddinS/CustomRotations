@@ -1,3 +1,5 @@
+Druid-Restoration-Vectarius.fzn
+Druid-Restoration-Vectarius.sb
 Hunter-BeastMastery-Vectarius.fzn
 Hunter-BeastMastery-Vectarius.sb
 Priest-Holy-Anna.cs
