@@ -1,0 +1,37 @@
+/*
+[AddonDetails.db]
+AddonAuthor=JarlBrak
+AddonName=Possessed
+WoWVersion=Legion - 70300
+[SpellBook.db]
+Spell,686,Shadow Bolt,D1
+Spell,157695,Demonbolt,D1
+Spell,193396,Demonic Empowerment,D2
+Spell,603,Doom,D3
+Spell,104316,Call Dreadstalkers,D4
+Spell,105174,Hand of Guldan,D5
+Spell,211714,Thalkiels Consumption,D6
+Spell,196277,Implosion,D7
+Spell,193440,Demonwrath,D8
+Spell,755,Health Funnel,D9
+Spell,1454,Life Tap,D0
+Spell,30146,Felguard,NumPad1
+Spell,111898,Grimoire: Felguard,NumPad2
+Spell,18540,Doomguard,NumPad3
+Spell,205180,Darkglare,NumPad4
+Spell,119914,Felstorm,NumPad5
+Spell,205181,Shadowflame,NumPad6
+Spell,196098,Soul Harvest,NumPad7
+Spell,30283,Shadowfury,NumPad8
+Spell,108416,Dark Pact,NumPad9
+Aura,2825,Bloodlust
+Aura,32182,Heroism
+Aura,80353,Time Warp
+Aura,160452,Netherwinds
+Aura,230935,Drums of War
+Aura,603,Doom
+Aura,193396,Demonic Empowerment
+Aura,205146,Demonic Calling
+Aura,205181,Shadowflame
+Aura,127271,Mount
+*/
