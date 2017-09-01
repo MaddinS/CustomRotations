@@ -1,3 +1,5 @@
+Hunter-Marksman-Vectarius.fzn
+Hunter-Marksman-Vectarius.sb
 Druid-Restoration-Vectarius.fzn
 Druid-Restoration-Vectarius.sb
 Hunter-BeastMastery-Vectarius.fzn
