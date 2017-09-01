@@ -1,0 +1,65 @@
+﻿/*
+[AddonDetails.db]
+AddonAuthor=Vectarius
+AddonName=Frozen
+WoWVersion=Legion - 70300
+[SpellBook.db]
+Spell,83245,Wolf,F1
+Spell,120679,Dire Beast,D1
+Spell,217200,Dire Frenzy,D1
+Spell,193455,Cobra Shot,D3
+Spell,2643,Multi-Shot,D4
+Spell,34026,Kill Command,D2
+Spell,19574,Bestial Wrath,D8
+Spell,131894,A Murder of Crows,D5
+Spell,206505,Murder of Crows,D5
+Spell,120360,Barrage,D6
+Spell,147362,Counter Shot,D0
+Spell,193530,Aspect of the Wild,D9
+Spell,20572,Blood Fury,F3
+Spell,207068,Titan's Thunder,D7
+Spell,5116,Concussive,None
+Spell,109304,Exhilaration,V
+Spell,186265,Aspect of the Turtle,G
+Spell,5384,Feign Death,F2
+Spell,127834,Potion,NumPad2
+Spell,143940,Silkweave Bandage,None
+Spell,55709,Phoenix,F6
+Spell,5512,Healthstone,NumPad2
+Spell,982,Revive Pet,X
+Spell,136,Heal Pet,X
+Spell,144259,Kil'jaeden's Burning Wish,NumPad4
+Spell,194386,Volley,F
+Spell,80483,Arcane Torrent,F3
+Spell,53209,Chimaera Shot,F8
+Spell,26297,Berserking,F3
+Spell,201430,Stampede,C
+Spell,24394,Intimidation,None
+Spell,142117,Pot,NumPad1
+Aura,120694,Dire Beast
+Aura,248085,Parsels Tongue
+Aura,217200,Dire Frenzy
+Aura,246152,DireFrenzy1
+Aura,246851,DireFrenzy2
+Aura,246852,DireFrenzy3
+Aura,186265,AspectoftheTurtle
+Aura,136,Heal Pet
+Aura,11196,Bandaged
+Aura,234143,Temptation
+Aura,2825,Bloodlust
+Aura,80353,Time Warp
+Aura,90355,Ancient Hysteria
+Aura,160452,Netherwinds
+Aura,146613,Drums
+Aura,32182,Heroism
+Aura,229206,Pot
+Aura,19574,Bestial Wrath
+Aura,118455,Beast Cleave
+Aura,193530,Aspect of the Wild
+Aura,194386,Volley
+Aura,137080,Roar of the Seven Lions
+Item,144259,Kil'jaeden's Burning Wish
+Item,142117,Pot
+Item,5512,Healthstone
+Item,127834,Potion
+*/
