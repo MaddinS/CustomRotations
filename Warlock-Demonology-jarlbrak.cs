@@ -51,11 +51,25 @@ namespace Frozen.Rotation
                 && !WoW.CleaveOn
                 && WoW.HasTarget
                 && WoW.TargetIsEnemy
-                && !WoW.PlayerIsCasting
+                && (!WoW.PlayerIsCasting || spellHistory.lastSpell == DemonWrath)
                 && !WoW.PlayerIsChanneling
                 && !WoW.IsMounted
                 && !WoW.IsMoving
                 && WoW.IsSpellInRange("Doom")){
+                    return true;
+            }
+            return false;
+        }
+
+        public bool CheckDoom(){
+            //Doom
+            if (WoW.HasTarget
+                && WoW.TargetIsEnemy
+                && WoW.IsInCombat
+                && !WoW.IsMounted
+                && !WoW.TargetHasDebuff("Doom")
+                && (spellHistory.lastSpell != HandOfGuldan || spellHistory.secondToLastSpell != HandOfGuldan)){
+                    Log.Write("Check doom was true! Casting doom!", Color.Red);
                     return true;
             }
             return false;
@@ -203,6 +217,27 @@ namespace Frozen.Rotation
             return total;
         }
 
+        public int TotalDemonWeight(){
+            int total = 0;
+            if (WoW.HasPet){
+                //Assumes you are using Felguard if you aren't specced for Doomguard
+                if (WoW.Talent(6) != 1){
+                    total += 156;
+                    if (GrimoireFelguardOut()){
+                        total += 156;
+                    }
+                    if (DoomguardOut()){
+                        total += 125;
+                    }
+                }
+                if (WoW.Talent(6) == 1){
+                    total += 125;
+                }
+                total += (WildImps * 47) + (Dreadstalkers * 125);
+            }
+            return total;
+        }
+
         public override void Initialize(){
             Log.Write("Welcome to Jarl's Demonology Warlock rotation", Color.Purple);
             WildImps = 0;
@@ -215,102 +250,117 @@ namespace Frozen.Rotation
         }
 
         public override void Pulse(){
-            bool HasPet = WoW.HasPet;
-            bool IsMoving = WoW.IsMoving;
-            bool IsMounted = WoW.IsMounted;
-            bool PlayerIsCasting = WoW.PlayerIsCasting;
-            bool HasTarget = WoW.HasTarget;
-            bool TargetIsEnemy = WoW.TargetIsEnemy;
-            bool IsInCombat = WoW.IsInCombat;
-            bool TargetHasDoom = WoW.TargetHasDebuff("Doom");
-            bool IsSpellInRange = WoW.IsSpellInRange("Doom");
-            bool PlayerHasBuffDemonicCalling = WoW.PlayerHasBuff("Demonic Calling");
-            bool PetHasBuffDemonicEmpowerment = WoW.PetHasBuff("Demonic Empowerment");
-            int PetHealthPercent = WoW.PetHealthPercent;
-            int CurrentSoulShards = WoW.CurrentSoulShards;
-            int LastSpellCastedID = WoW.LastSpellCastedID;
-            int PetDemonicEmpowermentRemaining = WoW.PetBuffTimeRemaining("Demonic Empowerment");
-            int TargetDoomTimeRemaining = WoW.TargetDebuffTimeRemaining("Doom");
-
-            Log.Write("Last Spells Cast - 1: " + spellHistory.lastSpell + " 2: " + spellHistory.secondToLastSpell + " 3: " + spellHistory.thirdToLastSpell);
             if (WoW.RotationOn){
                 KeepPetSummoned();
 
-                // Cast Life Tap when low
-                if (WoW.CanCast("Life Tap") && !WoW.IsMounted && WoW.Mana < 40 && WoW.HealthPercent > 40){
-                    WoW.CastSpell("Life Tap");
-                    AddToSpellHistory(LifeTap);
-                    return;
-                }
-                //Health Funnel
-                if (WoW.CanCast("Health Funnel") && PetHealthPercent <= 30 && !IsMoving && !IsMounted && HasPet){
-                    WoW.CastSpell("Health Funnel");
-                    AddToSpellHistory(HealthFunnel);
-                    return;
-                }
-                //Doom
-                if (HasTarget && TargetIsEnemy && IsInCombat && !IsMounted && !TargetHasDoom){
-                    WoW.CastSpell("Doom");
-                    AddToSpellHistory(Doom);
-                    return;
-                }
-                // Cast Demonwrath when in combat and moving
-                if (HasTarget && TargetIsEnemy && IsInCombat && WoW.CanCast("Demonwrath") && Mana > 40 && IsMoving && !IsMounted){
-                    WoW.CastSpell("Demonwrath");
-                    AddToSpellHistory(DemonWrath);
-                    return;
-                }
-                // Burst mode enabled
-                if (WoW.CooldownsOn){
-                    if (HasTarget && TargetIsEnemy && IsInCombat && !PlayerIsCasting && !IsMounted && IsSpellInRange && CurrentSoulShards >= 1){
-                        //Grimoire of Service
-                        if (WoW.CanCast("Grimoire: Felguard") && Talents[3] == 2){
-                            WoW.CastSpell("Grimoire: Felguard");
-                            AddToSpellHistory(GrimoireFelguard);
-                            return;
-                        }
+                Log.Write("Last Spell Cast: " + spellHistory.lastSpell, Color.Red);
 
-                        //Doomguard
-                        if (WoW.CanCast("Doomguard") && Talents[3] != 1){
-                            WoW.CastSpell("Doomguard");
-                            AddToSpellHistory(Doomguard);
-                            return;
-                        }
+                // Cast Life Tap when low
+                if (WoW.CanCast("Life Tap")
+                    && !WoW.IsMounted
+                    && WoW.Mana < 20
+                    && WoW.HealthPercent > 40){
+                        WoW.CastSpell("Life Tap");
+                        AddToSpellHistory(LifeTap);
+                        return;
+                }
+
+                //Health Funnel
+                if (WoW.CanCast("Health Funnel")
+                    && WoW.PetHealthPercent <= 30
+                    && !WoW.IsMoving
+                    && !WoW.IsMounted
+                    && WoW.HasPet){
+                        WoW.CastSpell("Health Funnel");
+                        AddToSpellHistory(HealthFunnel);
+                        return;
+                }
+                
+                // Cast Demonwrath when in combat and moving
+                if (WoW.CanCast("Demonwrath")
+                    && WoW.IsMoving
+                    && !WoW.IsMounted
+                    && WoW.HasTarget
+                    && WoW.TargetIsEnemy
+                    && WoW.IsInCombat
+                    && WoW.Mana > 40){
+                        WoW.CastSpell("Demonwrath");
+                        AddToSpellHistory(DemonWrath);
+                        return;
+                }
+
+                // Burst mode enabled
+                if (WoW.CooldownsOn && CheckSingleTarget()){
+
+                    //Doom
+                    if (CheckDoom()){
+                        WoW.CastSpell("Doom");
+                        AddToSpellHistory(Doom);
+                        return;
+                    }
+
+                    //Grimoire of Service
+                    if (WoW.CanCast("Grimoire: Felguard") && WoW.Talent(6) == 2){
+                        WoW.CastSpell("Grimoire: Felguard");
+                        AddToSpellHistory(GrimoireFelguard);
+                        return;
+                    }
+
+                    //Doomguard
+                    if (WoW.CanCast("Doomguard") && WoW.Talent(6) != 1){
+                        WoW.CastSpell("Doomguard");
+                        AddToSpellHistory(Doomguard);
+                        return;
                     }
                 }
+
                 //Single target rotation
                 if (CheckSingleTarget()){
+
+                    //Doom
+                    if (CheckDoom()){
+                        WoW.CastSpell("Doom");
+                        AddToSpellHistory(Doom);
+                        return;
+                    }
+
                     //If consumption is ready combo up to get more demons out
                     if (WoW.CanCast("Talkiels Consumption")){
                         //Doomguard/Felguard + Dreadstalkers combo
-                        if ((spellHistory.lastSpell == Doomguard || spellHistory.lastSpell == Felguard) && WoW.CanCast("Call Dreadstalkers") && (PlayerHasBuffDemonicCalling || CurrentSoulShards >= 2)){
-                            WoW.CastSpell("Call Dreadstalkers");
-                            AddToSpellHistory(CallDreadstalkers);
-                            DreadStalkersSummoned();
-                            return;
+                        if (WoW.CanCast("Call Dreadstalkers")
+                            && (spellHistory.lastSpell == Doomguard || spellHistory.lastSpell == Felguard)
+                            && (WoW.PlayerHasBuff("Demonic Calling") || WoW.CurrentSoulShards >= 2)){
+                                WoW.CastSpell("Call Dreadstalkers");
+                                AddToSpellHistory(CallDreadstalkers);
+                                DreadStalkersSummoned();
+                                return;
                         }
 
                         //Doomguard/Felguard + Hand of Guldan combo
-                        if ((spellHistory.lastSpell == Doomguard || spellHistory.lastSpell == Felguard) && CurrentSoulShards >= 2 && WoW.CanCast("Hand of Guldan")){
-                            if (CurrentSoulShards > 4){
-                            WoW.CastSpell("Hand of Guldan");
-                            AddToSpellHistory(HandOfGuldan);
-                            WildImpsSummoned(4);
-                            }
-                            else{
-                                WoW.CastSpell("Hand of Guldan");
-                                AddToSpellHistory(HandOfGuldan);
-                                WildImpsSummoned(CurrentSoulShards);
-                            }
-                            return;
+                        if (WoW.CanCast("Hand of Guldan")
+                            && WoW.CurrentSoulShards >= 2
+                            && (spellHistory.lastSpell == Doomguard || spellHistory.lastSpell == Felguard)){
+                                if (WoW.CurrentSoulShards > 4){
+                                    WoW.CastSpell("Hand of Guldan");
+                                    AddToSpellHistory(HandOfGuldan);
+                                    WildImpsSummoned(4);
+                                }
+                                else{
+                                    WoW.CastSpell("Hand of Guldan");
+                                    AddToSpellHistory(HandOfGuldan);
+                                    WildImpsSummoned(WoW.CurrentSoulShards);
+                                }
+                                return;
                         }
 
                         //Hand of Guldan + Dreadstalkers combo
-                        if (LastSpellCastedID == HandOfGuldan && WoW.CanCast("Call Dreadstalkers") && (PlayerHasBuffDemonicCalling || CurrentSoulShards >= 2)){
-                            WoW.CastSpell("Call Dreadstalkers");
-                            AddToSpellHistory(CallDreadstalkers);
-                            DreadStalkersSummoned();
-                            return;
+                        if (WoW.CanCast("Call Dreadstalkers")
+                            && spellHistory.lastSpell == HandOfGuldan
+                            && (WoW.PlayerHasBuff("Demonic Calling") || WoW.CurrentSoulShards >= 2)){
+                                WoW.CastSpell("Call Dreadstalkers");
+                                AddToSpellHistory(CallDreadstalkers);
+                                DreadStalkersSummoned();
+                                return;
                         }
 
                         //Demonic Empowerment
@@ -321,34 +371,40 @@ namespace Frozen.Rotation
                         }
 
                         //Talkiels Consumption combo with Demonic Empowerment
-                        if (spellHistory.lastSpell == DemonicEmpowerment && WoW.CanCast("Talkiels Consumption") && TotalDemonsOut() >= 8){
-                            WoW.CastSpell("Talkiels Consumption");
-                            AddToSpellHistory(ThalkielsConsumption);
-                            return;
+                        if (WoW.CanCast("Talkiels Consumption")
+                            && TotalDemonWeight() >= 688 //Equivalent of Felguard(Pet) + 6 Imps + 2 Dreadstalkers
+                            && spellHistory.lastSpell == DemonicEmpowerment){
+                                Log.Write("Total Demons Out: " + TotalDemonsOut(), Color.Purple);
+                                Log.Write("Total Demon Weight: " + TotalDemonWeight(), Color.Purple);
+                                WoW.CastSpell("Talkiels Consumption");
+                                AddToSpellHistory(ThalkielsConsumption);
+                                return;
                         }
                     }
 
                     //Dreadstalkers
-                    if (WoW.CanCast("Call Dreadstalkers") && (CurrentSoulShards >= 2 || PlayerHasBuffDemonicCalling)){
-                        WoW.CastSpell("Call Dreadstalkers");
-                        AddToSpellHistory(CallDreadstalkers);
-                        DreadStalkersSummoned();
-                        return;
+                    if (WoW.CanCast("Call Dreadstalkers")
+                        && (WoW.CurrentSoulShards >= 2 || WoW.PlayerHasBuff("Demonic Calling"))){
+                            WoW.CastSpell("Call Dreadstalkers");
+                            AddToSpellHistory(CallDreadstalkers);
+                            DreadStalkersSummoned();
+                            return;
                     }
 
                     //Hand of Guldan
-                    if (WoW.CanCast("Hand of Guldan") && (CurrentSoulShards >= 4 || (CurrentSoulShards >= 2 && TargetDoomTimeRemaining <= 200))){
-                        if (CurrentSoulShards > 4){
-                            WoW.CastSpell("Hand of Guldan");
-                            AddToSpellHistory(HandOfGuldan);
-                            WildImpsSummoned(4);
-                        }
-                        else{
-                            WoW.CastSpell("Hand of Guldan");
-                            AddToSpellHistory(HandOfGuldan);
-                            WildImpsSummoned(CurrentSoulShards);
-                        }
-                        return;
+                    if (WoW.CanCast("Hand of Guldan")
+                        && (WoW.CurrentSoulShards >= 4 || (WoW.CurrentSoulShards >= 2 && WoW.TargetDebuffTimeRemaining("Doom") <= 300))){
+                            if (WoW.CurrentSoulShards > 4){
+                                WoW.CastSpell("Hand of Guldan");
+                                AddToSpellHistory(HandOfGuldan);
+                                WildImpsSummoned(4);
+                            }
+                            else{
+                                WoW.CastSpell("Hand of Guldan");
+                                AddToSpellHistory(HandOfGuldan);
+                                WildImpsSummoned(WoW.CurrentSoulShards);
+                            }
+                            return;
                     }
 
                     //Demonic Empowerment
@@ -359,15 +415,17 @@ namespace Frozen.Rotation
                     }
                     
                     //Shadowbolt/Demonbolt
-                    if (WoW.CanCast("Demonbolt") && CurrentSoulShards != 5){
-                        WoW.CastSpell("Demonbolt");
-                        AddToSpellHistory(DemonBolt);
-                        return;
+                    if (WoW.CanCast("Demonbolt")
+                        && WoW.CurrentSoulShards != 5){
+                            WoW.CastSpell("Demonbolt");
+                            AddToSpellHistory(DemonBolt);
+                            return;
                     }
-                    if (WoW.CanCast("Shadow Bolt") && CurrentSoulShards != 5){
-                        WoW.CastSpell("Shadow Bolt");
-                        AddToSpellHistory(ShadowBolt);
-                        return;
+                    if (WoW.CanCast("Shadow Bolt")
+                        && WoW.CurrentSoulShards != 5){
+                            WoW.CastSpell("Shadow Bolt");
+                            AddToSpellHistory(ShadowBolt);
+                            return;
                     }
                 }
                 if (WoW.AoeOn){
