@@ -1,0 +1,61 @@
+﻿/*
+[AddonDetails.db]
+AddonAuthor=Vectarius
+AddonName=myspellpriority
+WoWVersion=Legion - 70200
+[SpellBook.db]
+Spell,2643,Multi-Shot,D4
+Spell,131894,A Murder of Crows,D9
+Spell,120360,Barrage,D6
+Spell,147362,Counter Shot,D8
+Spell,20572,Blood Fury,F3
+Spell,5116,Concussive,None
+Spell,109304,Exhilaration,V
+Spell,186265,Aspect of the Turtle,G
+Spell,5384,Feign Death,F2
+Spell,127834,Potion,NumPad2
+Spell,143940,Silkweave Bandage,None
+Spell,55709,Phoenix,F6
+Spell,5512,Healthstone,NumPad2
+Spell,982,Revive Pet,X
+Spell,136,Heal Pet,X
+Spell,144259,Kil'jaeden's Burning Wish,NumPad4
+Spell,194386,Volley,F
+Spell,80483,Arcane Torrent,F3
+Spell,53209,Chimaera Shot,F8
+Spell,26297,Berserking,F3
+Spell,201430,Stampede,C
+Spell,24394,Intimidation,None
+Spell,142117,Pot,NumPad1
+Spell,204147,Windburst,D2
+Spell,19434,AS,D0
+Spell,185358,Arcane Shot,D5
+Spell,185901,Marked Shot,D6
+Spell,186387,Bursting Shot,D7
+Spell,198670,Piercing Shot,D1
+Spell,193526,Trueshot,C
+Aura,246153,Precision
+Aura,242243,Critical Aimed
+Aura,186265,AspectoftheTurtle
+Aura,136,Heal Pet
+Aura,11196,Bandaged
+Aura,234143,Temptation
+Aura,2825,Bloodlust
+Aura,80353,Time Warp
+Aura,90355,Ancient Hysteria
+Aura,160452,Netherwinds
+Aura,146613,Drums
+Aura,32182,Heroism
+Aura,229206,Pot
+Aura,194386,Volley
+Aura,223138,Marking Targets
+Aura,185365,Hunters Mark
+Aura,194594,LockAndLoad
+Aura,187131,Vulnerable
+Aura,193526,Trueshot
+Aura,235712,Gyroscopic Stabilization
+Item,144259,Kil'jaeden's Burning Wish
+Item,142117,Pot
+Item,5512,Healthstone
+Item,127834,Potion
+*/
