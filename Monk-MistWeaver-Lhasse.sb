@@ -1,7 +1,7 @@
 /*
 [AddonDetails.db]
 AddonAuthor=Lhasse
-AddonName=Frozen
+AddonName=rotationface
 WoWVersion=Legion - 70300
 [SpellBook.db]
 Spell,116849,LifeCocoon,P
@@ -18,14 +18,9 @@ Spell,115310,Revival,Y
 Spell,107428,RSK,U
 Spell,116670,Vivify,T
 Spell,100780,Tiger,E
-Spell,119381,LegSweep,K
 Spell,129597,ArcaneTorrent,X
 Spell,100784,BlackoutKick,R
-Spell,209520,SoothingMistPVP,Z
 Aura,119611,RenewingMist
-Aura,195488,VimAndVigor
-Aura,246328,SurgeOfMist
-Aura,197912,PrinciplesofWar
 Aura,191840,EssenceFont
 Aura,202090,BlackoutBuff
 Aura,124682,EnvelopingMist
