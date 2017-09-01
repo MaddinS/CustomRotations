@@ -7,12 +7,14 @@ namespace Frozen.Rotation
 {
     public class WarlockDemonology : CombatRoutine
     {
-        public override string Name => "Demonology Warlock";
+        public override string Name => "Possessed";
 
         public override string Class => "Warlock";
 
-        public static int WildImps;
-        public static int Dreadstalkers;
+        public static int WildImpsOut;
+        public static int DreadstalkersOut;
+        public static int GrimoireFelguardOut;
+        public static int DoomguardOut;
         public static int[] Talents;
 
         public struct SpellHistory{
@@ -69,7 +71,6 @@ namespace Frozen.Rotation
                 && !WoW.IsMounted
                 && !WoW.TargetHasDebuff("Doom")
                 && (spellHistory.lastSpell != HandOfGuldan || spellHistory.secondToLastSpell != HandOfGuldan)){
-                    Log.Write("Check doom was true! Casting doom!", Color.Red);
                     return true;
             }
             return false;
@@ -144,102 +145,108 @@ namespace Frozen.Rotation
             return castTime;
         }
 
+        //Wild Imp control functions
         public void WildImpsSummoned (int shardsUsed){
             WildImps += shardsUsed;
             RunImpTimer(shardsUsed);
             return;
         }
-
         public void RunImpTimer(int shardsUsed){
             System.Timers.Timer impTimer = new System.Timers.Timer (12000);
             impTimer.Elapsed += (sender, e) => WildImpsTimedOut(sender, e, shardsUsed);
             impTimer.AutoReset = false;
             impTimer.Enabled = true;
         }
-
         public void WildImpsTimedOut (object sender, ElapsedEventArgs e, int shardsUsed){
             WildImps -= shardsUsed;
             return;
         }
 
+        //Dreadstalker control functions
         public void DreadStalkersSummoned (){
             if (Talents[1] == 2){
                 WildImpsSummoned(2);
             }
-            Dreadstalkers += 2;
+            DreadstalkersOut += 2;
             RunDreadTimer();
             return;
         }
-
         public void RunDreadTimer(){
             System.Timers.Timer dreadTimer = new System.Timers.Timer (12000);
             dreadTimer.Elapsed += DreadstalkerTimedOut;
             dreadTimer.AutoReset = false;
             dreadTimer.Enabled = true;
         }
-
         public void DreadstalkerTimedOut (object sender, ElapsedEventArgs e){
-            Dreadstalkers -= 2;
+            DreadstalkersOut -= 2;
             return;
         }
 
-        public bool GrimoireFelguardOut (){
-            if (WoW.IsSpellOnCooldown("Grimoire: Felguard")){
-                int timeSinceCast = 9000 - WoW.SpellCooldownTimeRemaining(111898);
-                if (timeSinceCast > 2500){
-                    return false;
-                }
-                return true;
-            }
-            return false;
+        //Grimoire Felguard control functions
+        public void GrimoireSummoned (){
+            GrimoireFelguardOut += 1;
+            RunGrimoireTimer();
+            return;
+        }
+        public bool RunGrimoireTimer (){
+            System.Timers.Timer grimoireTimer = new System.Timers.Timer (12000);
+            grimoireTimer.Elapsed += GrimoireTimedOut;
+            grimoireTimer.AutoReset = false;
+            grimoireTimer.Enabled = true;
+        }
+        public void GrimoireTimedOut (object sender, ElapsedEventArgs e){
+            GrimoireFelguardOut -= 1;
+            return;
         }
 
-        public bool DoomguardOut (){
-            if (WoW.IsSpellOnCooldown("Doomguard")){
-                int timeSinceCast = 1800 - WoW.SpellCooldownTimeRemaining(18540);
-                if (timeSinceCast > 250){
-                    return false;
-                }
-                return true;
-            }
-            return false;
+        //Doomguard control functions
+        public void DoomguardSummoned (){
+            DoomguardOut += 1;
+            RunDoomguardTimer();
+            return;
+        }
+        public bool RunDoomguardTimer (){
+            System.Timers.Timer doomguardTimer = new System.Timers.Timer (12000);
+            doomguardTimer.Elapsed += DoomguardTimedOut;
+            doomguardTimer.AutoReset = false;
+            doomguardTimer.Enabled = true;
+        }
+        public void DoomguardTimedOut (object sender, ElapsedEventArgs e){
+            DoomguardOut -= 1;
+            return;
         }
 
         public int TotalDemonsOut(){
             int total = 0;
-            if (GrimoireFelguardOut()){
+            if (WoW.HasPet && WoW.PetHealthPercent > 0){
                 total += 1;
             }
-            if (DoomguardOut()){
-                total += 1;
-            }
-            total += WildImps + Dreadstalkers;
+            total += WildImpsOut + DreadstalkersOut + GrimoireFelguardOut + DoomguardOut;
             return total;
         }
 
         public int TotalDemonWeight(){
+            //This formula is based on Not's Demonology Guide
             int total = 0;
-            if (WoW.HasPet){
+            if (WoW.HasPet && WoW.PetHealthPercent > 0){
                 //Assumes you are using Felguard if you aren't specced for Doomguard
                 if (WoW.Talent(6) != 1){
                     total += 156;
-                    if (GrimoireFelguardOut()){
-                        total += 156;
-                    }
-                    if (DoomguardOut()){
-                        total += 125;
-                    }
                 }
+                //If you are specced for Doomguard
                 if (WoW.Talent(6) == 1){
                     total += 125;
                 }
-                total += (WildImps * 47) + (Dreadstalkers * 125);
+                total += (WildImpsOut * 47) + (DreadstalkersOut * 125) + (GrimoireFelguardOut * 156) + (DoomguardOut * 125);
             }
             return total;
         }
 
         public override void Initialize(){
-            Log.Write("Welcome to Jarl's Demonology Warlock rotation", Color.Purple);
+            Log.Write("Welcome to Possessed (Free Version) - A Demonology rotation by JarlBrak", Color.FromArgb(148,130,201));
+            Log.Write("The free version is limited to single target rotation only with no menu customizations.", Color.FromArgb(148,130,201));
+            Log.Write("For information on how to purchase, please chat with me on Discord!", Color.FromArgb(148,130,201));
+            Log.Write("---------------------------------------------------------------------------------------", Color.FromArgb(148,130,201));
             WildImps = 0;
             Dreadstalkers = 0;
             Talents = new int[5];
@@ -252,8 +259,6 @@ namespace Frozen.Rotation
         public override void Pulse(){
             if (WoW.RotationOn){
                 KeepPetSummoned();
-
-                Log.Write("Last Spell Cast: " + spellHistory.lastSpell, Color.Red);
 
                 // Cast Life Tap when low
                 if (WoW.CanCast("Life Tap")
@@ -325,7 +330,7 @@ namespace Frozen.Rotation
                     }
 
                     //If consumption is ready combo up to get more demons out
-                    if (WoW.CanCast("Talkiels Consumption")){
+                    if (WoW.CanCast("Thalkiels Consumption")){
                         //Doomguard/Felguard + Dreadstalkers combo
                         if (WoW.CanCast("Call Dreadstalkers")
                             && (spellHistory.lastSpell == Doomguard || spellHistory.lastSpell == Felguard)
@@ -370,13 +375,13 @@ namespace Frozen.Rotation
                             return;
                         }
 
-                        //Talkiels Consumption combo with Demonic Empowerment
-                        if (WoW.CanCast("Talkiels Consumption")
+                        //Thalkiels Consumption combo with Demonic Empowerment
+                        if (WoW.CanCast("Thalkiels Consumption")
                             && TotalDemonWeight() >= 688 //Equivalent of Felguard(Pet) + 6 Imps + 2 Dreadstalkers
                             && spellHistory.lastSpell == DemonicEmpowerment){
                                 Log.Write("Total Demons Out: " + TotalDemonsOut(), Color.Purple);
                                 Log.Write("Total Demon Weight: " + TotalDemonWeight(), Color.Purple);
-                                WoW.CastSpell("Talkiels Consumption");
+                                WoW.CastSpell("Thalkiels Consumption");
                                 AddToSpellHistory(ThalkielsConsumption);
                                 return;
                         }
@@ -429,10 +434,10 @@ namespace Frozen.Rotation
                     }
                 }
                 if (WoW.AoeOn){
-
+                    return;
                 }
                 if (WoW.CleaveOn){
-
+                    return;
                 }
             } 
         }
@@ -441,30 +446,30 @@ namespace Frozen.Rotation
 
 /*
 [AddonDetails.db]
-AddonAuthor=/kb
-AddonName=Frozen
+AddonAuthor=JarlBrak
+AddonName=Possessed
 WoWVersion=Legion - 70300
 [SpellBook.db]
-Spell,686,Shadow Bolt,NumPad1
-Spell,157695,Demonbolt,NumPad1
-Spell,104316,Call Dreadstalkers,NumPad2
-Spell,105174,Hand of Guldan,NumPad3
-Spell,193396,Demonic Empowerment,NumPad4
-Spell,603,Doom,NumPad5
-Spell,755,Health Funnel,Divide
-Spell,193440,Demonwrath,NumPad6
-Spell,1454,Life Tap,NumPad7
-Spell,205180,Darkglare,NumPad8
-Spell,111898,Grimoire: Felguard,NumPad9
-Spell,211714,Talkiels Consumption,Add
-Spell,205181,Shadowflame,NumPad0
-Spell,30146,Felguard,D9
-Spell,18540,Doomguard,Decimal
-Spell,119914,Felstorm,D4
-Spell,196098,Soul Harvest,D0
+Spell,686,Shadow Bolt,D1
+Spell,157695,Demonbolt,D1
+Spell,193396,Demonic Empowerment,D2
+Spell,603,Doom,D3
+Spell,104316,Call Dreadstalkers,D4
+Spell,105174,Hand of Guldan,D5
+Spell,211714,Thalkiels Consumption,D6
 Spell,196277,Implosion,D7
-Spell,30283,Shadowfury,D3
-Spell,108416,Dark Pact,Multiply
+Spell,193440,Demonwrath,D8
+Spell,755,Health Funnel,D9
+Spell,1454,Life Tap,D0
+Spell,30146,Felguard,NumPad1
+Spell,111898,Grimoire: Felguard,NumPad2
+Spell,18540,Doomguard,NumPad3
+Spell,205180,Darkglare,NumPad4
+Spell,119914,Felstorm,NumPad5
+Spell,205181,Shadowflame,NumPad6
+Spell,196098,Soul Harvest,NumPad7
+Spell,30283,Shadowfury,NumPad8
+Spell,108416,Dark Pact,NumPad9
 Aura,2825,Bloodlust
 Aura,32182,Heroism
 Aura,80353,Time Warp
