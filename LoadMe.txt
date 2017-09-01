@@ -24,3 +24,4 @@ Warrior-Fury-Tazd3v.cs
 Plugin-mplusinterrupter-Myrex.cs 
 Hunter-Marksman-Lhasse.fzn
 Hunter-Marksman-Lhasse.sb
+Priest-Holy-RoseFarts.cs
