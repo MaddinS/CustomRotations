@@ -27,3 +27,5 @@ Hunter-Marksman-Lhasse.sb
 Warlock-Demonology-Jarlbrak.fzn
 Warlock-Demonology-Jarlbrak.sb
 Priest-Holy-RoseFarts.cs
+Druid-Guardian-Harath.fzn
+Druid-Guardian-Harath.sb
