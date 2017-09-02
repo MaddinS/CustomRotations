@@ -1,4 +1,4 @@
-/*
+﻿/*
 [AddonDetails.db]
 AddonAuthor=Myrex
 AddonName=Frozen
@@ -20,4 +20,6 @@ Spell,183752,ConsumeMagic,R
 Aura,162264,Metamorphosis
 Aura,247938,ChaosBlades
 Aura,206491,Nemesis
+Aura,207690,Bloodlet
+
 */
