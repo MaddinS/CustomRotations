@@ -24,6 +24,6 @@ Warrior-Fury-Tazd3v.cs
 Plugin-mplusinterrupter-Myrex.cs 
 Hunter-Marksman-Lhasse.fzn
 Hunter-Marksman-Lhasse.sb
-Warlock-Demonology-jarlbrak.fzn
-Warlock-Demonology-jarlbrak.sb
+Warlock-Demonology-Jarlbrak.fzn
+Warlock-Demonology-Jarlbrak.sb
 Priest-Holy-RoseFarts.cs
