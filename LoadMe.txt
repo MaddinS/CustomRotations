@@ -9,8 +9,8 @@ Warrior-Arms-Myrex.cs
 Hunter-BeastMastery-MooTauren.cs
 Bundles-Tanks-Myrex.fzn
 Bundles-Tanks-Myrex.sb
-Monk-MistWeaver-Lhasse.fzn
-Monk-MistWeaver-Lhasse.sb
+Monk-Mistweaver-Lhasse.fzn
+Monk-Mistweaver-Lhasse.sb
 Rogue-Assasination-Creepyjoker.fzn
 Rogue-Assasination-Creepyjoker.sb
 Mage-Frost-Creepyjoker.fzn
@@ -26,3 +26,4 @@ Hunter-Marksman-Lhasse.fzn
 Hunter-Marksman-Lhasse.sb
 Warlock-Demonology-jarlbrak.fzn
 Warlock-Demonology-jarlbrak.sb
+Priest-Holy-RoseFarts.cs
