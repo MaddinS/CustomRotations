@@ -33,3 +33,5 @@ Warrior-Protection-Harath.fzn
 Warrior-Protection-Harath.sb
 DeathKnight-Frost-smartie.fzn
 DeathKnight-Frost-smartie.sb
+DeathKnight-Unholy-smartie.fzn
+DeathKnight-Unholy-smartie.sb
