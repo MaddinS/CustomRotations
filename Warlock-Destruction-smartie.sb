@@ -1,0 +1,35 @@
+/*
+[AddonDetails.db]
+AddonAuthor=smartie
+AddonName=Frozen
+WoWVersion=Legion - 70300
+[SpellBook.db]
+Spell,29722,Incinerate,D1
+Spell,348,Immolate,D3
+Spell,17962,Conflagrate,D4
+Spell,116858,ChaosBolt,D2
+Spell,18540,DoomGuard,F1
+Spell,196586,DimRift,F2
+Spell,111859,ServiceImp,F3
+Spell,104773,UnendingResolve,F5
+Spell,80240,Havoc,F5
+Spell,234153,DrainLife,F2
+Spell,26297,Berserk,D0
+Spell,5512,Healthstone,NumPad1
+Spell,196098,Soul Harvest,D9
+Spell,196447,Channel Demonfire,D7
+Spell,1454,Life Tap,F6
+Spell,5740,Rain of Fire,D6
+Spell,144259,KBW,NumPad3
+Spell,1122,Infernal,F11
+Aura,235156,Life Tap
+Aura,196098,Soul Harvest
+Aura,157736,Immolate
+Aura,196414,ChaosBolt
+Aura,196546,Conflagrate
+Aura,236176,Lessons of Space-Time
+Aura,208215,Norgannon's Foresight
+Aura,226802,Lord of Flames
+Item,5512,Healthstone
+Item,144259,KBW
+*/

@@ -1,0 +1,37 @@
+/*
+[AddonDetails.db]
+AddonAuthor=smartie
+AddonName=Frozen
+WoWVersion=Legion - 70300
+[SpellBook.db]
+Spell,8921,Moonfire,D2
+Spell,213771,Swipe,D3
+Spell,77758,Thrash,D4
+Spell,33917,Mangle,D5
+Spell,6807,Maul,D6
+Spell,192081,Ironfur,NumPad5
+Spell,5487,Bear Form,NumPad9
+Spell,204066,Lunar Beam,D8
+Spell,200851,Rage of the Sleeper,D7
+Spell,22812,Barkskin,NumPad1
+Spell,61336,Survival Instincts,NumPad2
+Spell,22842,Frenzied Regeneration,NumPad6
+Spell,155835,Bristling Fur,NumPad7
+Spell,80313,Pulverize,NumPad8
+Spell,102558,Incarnation,D9
+Aura,164812,Moonfire
+Aura,192090,Thrash
+Aura,93622,Gore
+Aura,213708,Galactic Guardian
+Aura,5487,Bear Form
+Aura,213680,Guardian of Elune
+Aura,211160,Natural Defenses
+Aura,61336,Survival Instincts
+Aura,22812,Barkskin
+Aura,192081,Ironfur
+Aura,22842,Frenzied Regeneration
+Aura,102558,Incarnation
+Aura,155835,Bristling Fur
+Aura,158792,Pulverize
+Aura,783,Travel Form
+*/

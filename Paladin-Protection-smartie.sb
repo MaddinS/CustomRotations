@@ -1,0 +1,31 @@
+/*
+[AddonDetails.db]
+AddonAuthor=smartie
+AddonName=Frozen
+WoWVersion=Legion - 70200
+[SpellBook.db]
+Spell,20271,Judgment,D4
+Spell,204019,Blessed Hammer,D5
+Spell,53595,Hammer of the Righteous,D5
+Spell,53600,Shield of the Righteous,D6
+Spell,31935,Avenger's Shield,D2
+Spell,31884,Avenging Wrath,D7
+Spell,26573,ConsecrationProt,D3
+Spell,96231,Rebuke,NumPad4
+Spell,184092,Light of the Protector,NumPad2
+Spell,152262,Seraphim,D8
+Spell,213652,Hand of the Protector,NumPad2
+Spell,209202,Eye of Tyr,D9
+Spell,633,Lay on Hands,NumPad3
+Spell,86659,Guardian of the Ancient Kings,NumPad1
+Spell,31850,Ardent Defender,NumPad5
+Spell,204035,Bastion of Light,D0
+Spell,80483,Arcane Torrent,NumPad6
+Aura,132403,Shield of the Righteous
+Aura,204301,Blessed Hammer
+Aura,204242,ConsecrationProt
+Aura,152262,Seraphim
+Aura,221886,Divine Steed
+Aura,197277,Judgment
+Aura,213757,Execution Sentence
+*/

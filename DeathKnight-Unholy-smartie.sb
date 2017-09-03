@@ -1,0 +1,41 @@
+[AddonDetails.db]
+AddonAuthor=smartie
+AddonName=Frozen
+WoWVersion=Legion - 70300
+[SpellBook.db]
+Spell,77575,Outbreak,D1
+Spell,63560,Dark Transformation,OemOpenBrackets
+Spell,85948,Festering Strike,D3
+Spell,220143,Apocalypse,D0
+Spell,130736,Soul Reaper,D9
+Spell,55090,Scourge Strike,D4
+Spell,207311,Clawing Shadows,D4
+Spell,47541,Death Coil,D5
+Spell,43265,Death and Decay,D6
+Spell,152280,Defile,D6
+Spell,207317,Epidemic,D7
+Spell,49206,Summon Gargoyle,D8
+Spell,207349,Dark Arbiter,D8
+Spell,48707,Anti-Magic Shell,NumPad2
+Spell,48792,Icebound Fortitude,NumPad3
+Spell,46584,Raise Dead,NumPad5
+Spell,194918,Blighted Rune Weapon,NumPad6
+Spell,144259,KBW,T
+Spell,49998,Death Strike,NumPad1
+Spell,47528,Mind Freeze,NumPad4
+Spell,80483,Arcane Torrent,F3
+Spell,45524,Chains of Ice,F11
+Aura,101568,Free DeathStrike
+Aura,191587,Virulent Plague
+Aura,194310,Festering Wound
+Aura,207305,Castigator
+Aura,215711,Soul Reaper
+Aura,130736,Soul Reaper2
+Aura,212756,Ignoble Sacrifice
+Aura,63560,Dark Transformation
+Aura,81340,Sudden Doom
+Aura,170761,Necrosis
+Aura,53365,Unholy Strength
+Aura,235599,Cold Heart
+Item,144259,KBW
+*/
