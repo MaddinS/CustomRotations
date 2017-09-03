@@ -29,3 +29,5 @@ Warlock-Demonology-Jarlbrak.sb
 Priest-Holy-RoseFarts.cs
 Druid-Guardian-Harath.fzn
 Druid-Guardian-Harath.sb
+Warrior-Protection-Harath.fzn
+Warrior-Protection-Harath.sb
