@@ -1,0 +1,38 @@
+﻿/*
+[AddonDetails.db]
+AddonAuthor=smartie
+AddonName=Frozen
+WoWVersion=Legion - 70300
+[SpellBook.db]
+Spell,49143,Frost Strike,D4
+Spell,207230,Frostscythe,NumPad8
+Spell,49184,Howling Blast,D1
+Spell,49020,Obliterate,D3
+Spell,196770,Remorseless Winter,D7
+Spell,194913,Glacial Advance,NumPad7
+Spell,49998,Death Strike,NumPad1
+Spell,48707,Anti-Magic Shell,NumPad2
+Spell,48792,Icebound Fortitude,NumPad3
+Spell,51271,PillarofFrost,D6
+Spell,47568,Empower Rune,D9
+Spell,207127,HEmpower Rune,D9
+Spell,207256,Obliteration,OemOpenBrackets
+Spell,152279,Breath,D5
+Spell,57330,Horn,D0
+Spell,190778,Sindragosa's Fury,D8
+Spell,26297,Berserking,F9
+Spell,50613,Arcane Torrent,F9
+Spell,20572,Blood Fury,F9
+Spell,47528,Mind Freeze,NumPad4
+Aura,51124,Killing Machine
+Aura,194879,Icy Talons
+Aura,55095,Frost Fever
+Aura,59052,Rime
+Aura,101568,Free DeathStrike
+Aura,51271,PillarofFrost
+Aura,45524,ChainofIce
+Aura,207256,Obliteration
+Aura,152279,Breath
+Aura,207127,HEmpower Rune
+Aura,211805,Gathering Storm
+*/
