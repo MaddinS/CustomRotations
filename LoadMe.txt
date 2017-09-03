@@ -31,3 +31,5 @@ Druid-Guardian-Harath.fzn
 Druid-Guardian-Harath.sb
 Warrior-Protection-Harath.fzn
 Warrior-Protection-Harath.sb
+DeathKnight-Frost-smartie.fzn
+DeathKnight-Frost-smartie.sb
