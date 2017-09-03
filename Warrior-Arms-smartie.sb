@@ -1,0 +1,35 @@
+/*
+[AddonDetails.db]
+AddonAuthor=smartie
+AddonName=Frozen
+WoWVersion=Legion - 70200
+[SpellBook.db]
+Spell,12294,Mortal Strike,D4
+Spell,167105,Colossus Smash,D3
+Spell,1464,Slam,D8
+Spell,1719,Battle Cry,F2
+Spell,163201,Execute,D6
+Spell,209577,Warbreaker,F1
+Spell,845,Cleave,D9
+Spell,1680,Whirlwind,D7
+Spell,227847,Bladestorm,D5
+Spell,152277,Ravager,D5
+Spell,772,Rend,D8
+Spell,34428,Victorious,F3
+Spell,118038,Die by the Sword,F2
+Spell,6552,Pummel,F11
+Spell,20572,Blood Fury,NumPad1
+Spell,80483,Arcane Torrent,NumPad1
+Spell,26297,Berserking,NumPad1
+Aura,227847,Bladestorm
+Aura,772,Rend
+Aura,107574,Avatar
+Aura,208086,Colossus Smash
+Aura,209706,Shattered Defenses
+Aura,1719,Battle Cry
+Aura,845,Cleave
+Aura,32216,Victorious
+Aura,242188,Executioner's Precision
+Aura,225947,Stone Heart
+Item,147011,Vial of Ceaseless Toxins
+*/
