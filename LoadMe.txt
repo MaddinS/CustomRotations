@@ -35,3 +35,11 @@ DeathKnight-Frost-smartie.fzn
 DeathKnight-Frost-smartie.sb
 DeathKnight-Unholy-smartie.fzn
 DeathKnight-Unholy-smartie.sb
+Warrior-Arms-smartie.fzn
+Warrior-Arms-smartie.sb
+Warlock-Destruction-smartie.fzn
+Warlock-Destruction-smartie.sb
+Paladin-Protection-smartie.fzn
+Paladin-Protection-smartie.sb
+Druid-Guardian-smartie.fzn
+Druid-Guardian-smartie.sb
