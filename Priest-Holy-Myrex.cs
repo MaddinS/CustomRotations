@@ -11,10 +11,7 @@ namespace Frozen.Rotation
 {
     public class Priest_Holy : CombatRoutine
     {
-        public override string Name => "Frozen Holy";
-
-        public override string Class => "Priest";
-
+     
         public override Form SettingsForm
         {
             get { return null; }
@@ -29,7 +26,7 @@ namespace Frozen.Rotation
         {
             Log.Clear();
             Log.WriteFrozen("Welcome to Frozen Holy", Color.Black);
-            Log.Write($"Supported Talents: {supportedTalents}");
+            Log.Write("Supported Talents: {supportedTalents}");
             Log.Write("Ensure you have setup healing keybinds before.", Color.Red);
             
             Log.DrawHorizontalLine();
@@ -113,28 +110,28 @@ namespace Frozen.Rotation
                 !WoW.IsSpellOnCooldown("Guardian Spirit") && // Make sure we dont try and use it whilst on cooldown
                 WoW.TankId == currentTargetId) // Make sure we only use LOH on tank
             {
-                WoW.CastSpell("Guardian Spirit", currentTargetId);
+                WoW.CastSpell("Guardian Spirit");
                 return;
             }
 			if (WoW.CanCast("Holy Word Serenity") &&
                 lowest <= 50 && // Use LOH if tanks health < 20 %
                 !WoW.IsSpellOnCooldown("Holy Word Serenity")) // Make sure we dont try and use it whilst on cooldown
             { 
-                WoW.CastSpell("Holy Word Serenity", currentTargetId);
+                WoW.CastSpell("Holy Word Serenity");
                 return;
             }
 			
 			 // Flash of Light use as an emergency heal to save players facing death. 
             if (WoW.CanCast("Flash Heal") && lowest <= 50 && !WoW.IsMoving)
             {
-                WoW.CastSpell("Flash Heal", currentTargetId);
+                WoW.CastSpell("Flash Heal");
                 return;
             }
 
             // Holy Light use to heal moderate to high damage. 
             if (WoW.CanCast("Heal") && lowest <= 80 && !WoW.IsMoving)
             {
-                WoW.CastSpell("Heal", currentTargetId);
+                WoW.CastSpell("Heal");
                 return;
             }
 
@@ -144,7 +141,7 @@ namespace Frozen.Rotation
 			  !WoW.TargetHasBuff("Light of Tuure")) // Make sure we dont try and use it whilst on cooldown
 			  
             { 
-                WoW.CastSpell("Light of Tuure", currentTargetId);
+                WoW.CastSpell("Light of Tuure");
                 return;
             }
 
@@ -152,7 +149,7 @@ namespace Frozen.Rotation
              lowest <= 90 && // Make sure we dont try and use it whilst on cooldown
              WoW.IsMoving)
             {
-                WoW.CastSpell("Renew", currentTargetId);
+                WoW.CastSpell("Renew");
                 return;
             }
 
@@ -161,7 +158,7 @@ namespace Frozen.Rotation
              !WoW.IsSpellOnCooldown("Prayer of Mending") && // Make sure we dont try and use it whilst on cooldown
              !WoW.TargetHasBuff("Prayer of Mending")) // Make sure we only use PoM on tank
             {
-                WoW.CastSpell("Prayer of Mending", currentTargetId);
+                WoW.CastSpell("Prayer of Mending");
                 return;
             }
 

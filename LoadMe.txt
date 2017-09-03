@@ -4,7 +4,7 @@ Druid-Restoration-Vectarius.fzn
 Druid-Restoration-Vectarius.sb
 Hunter-BeastMastery-Vectarius.fzn
 Hunter-BeastMastery-Vectarius.sb
-Priest-Holy-Anna.cs
+Priest-Holy-Myrex.cs 
 Warrior-Arms-Myrex.cs 
 Hunter-BeastMastery-MooTauren.cs
 Bundles-Tanks-Myrex.fzn
