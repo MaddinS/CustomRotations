@@ -1,7 +1,7 @@
 /*
 [AddonDetails.db]
 AddonAuthor=Hara
-AddonName=HASHTAGPWNAGE
+AddonName=Frozen
 WoWVersion=Legion - 70200
 [SpellBook.db]
 Spell,22812,Barkskin,F2
@@ -21,7 +21,6 @@ Spell,61336,SurvivalInstinct,F3
 Spell,18562,Swiftmend,F6
 Spell,213771,Swipe,D5
 Spell,77758,Thrash,D6
-Range,33917,Mangle
 Aura,5487,BearFormAura
 Aura,213708,GalacticGuardianAura
 Aura,192081,IronfurAura
@@ -33,4 +32,5 @@ Aura,93622,GoreAura
 Aura,158792,PulverizeAura
 Aura,192090,ThrashAura
 Aura,164812,MoonfireAura
+Item,144259,BurningWish,D9
 */

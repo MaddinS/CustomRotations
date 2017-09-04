@@ -29,6 +29,7 @@ Spell,107570,StormBolt,F12
 Spell,355,Taunt,
 Spell,6343,ThunderClap,D4
 Spell,34428,VictoryRush,D7
+Item,144259,Burning Wish
 Range,6552,Pummel
 Aura,107574,AvatarAura
 Aura,1719,BattleCryAura
