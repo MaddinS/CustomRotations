@@ -5,12 +5,9 @@ using Frozen.Helpers;
 
 namespace Frozen.Rotation
 {
-    public class FuryWarriorLel : CombatRoutine
+    public class WarriorFury : CombatRoutine
     {
-        public override string Name => "Fury";
-
-        public override string Class => "Warrior";
-
+              
         public override Form SettingsForm { get; set; }
 
 	public static bool DragonRoar
