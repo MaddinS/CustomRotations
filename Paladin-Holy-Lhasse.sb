@@ -24,6 +24,7 @@ Spell,20271,Judgment,D7
 Spell,35395,CrusaderStrike,D6
 Spell,498,DivineProtection,OemMinus
 Spell,26573,Consecration,D4
+Spell,853,HammerOfJustice,D8
 Aura,188370,Consecration
 Aura,196941,JudgmentofLight
 Aura,211210,AuraMastery
@@ -34,4 +35,5 @@ Aura,200025,BeaconofVirtue
 Aura,105809,HolyAvenger
 Aura,31842,AvengingWrath
 Aura,214222,Judgment
+Aura,223306,BestowFaith
 */
