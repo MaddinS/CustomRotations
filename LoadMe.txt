@@ -6,7 +6,6 @@ Hunter-BeastMastery-Vectarius.fzn
 Hunter-BeastMastery-Vectarius.sb
 Priest-Holy-Myrex.cs 
 Warrior-Arms-Myrex.cs 
-Hunter-BeastMastery-MooTauren.cs
 Bundles-Tanks-Myrex.fzn
 Bundles-Tanks-Myrex.sb
 Monk-Mistweaver-Lhasse.fzn
