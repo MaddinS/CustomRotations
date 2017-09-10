@@ -42,3 +42,5 @@ Paladin-Protection-smartie.fzn
 Paladin-Protection-smartie.sb
 Druid-Guardian-smartie.fzn
 Druid-Guardian-smartie.sb
+Rogue-Subtlety-Zanrub.cs
+Rogue-Outlaw-Creepyjoker.cs
