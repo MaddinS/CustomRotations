@@ -1,18 +1,24 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 using Frozen.Helpers;
 
 namespace Frozen.Plugins
 {
-    internal class SamplePlugin : Plugin
+    public class InterruptPlugz : Plugin
     {
         private readonly Stopwatch InterruptDelay = new Stopwatch();
 		
-        public override string Name => "Mythic Plus & Raid Interrupts iaw WoWhead";
-
-        public override Form SettingsForm { get; set; }
+		public override string Name
+        {
+            get
+            {
+                return "Interrupt Plugin";
+            }
+        } 
 		
+		public override Form SettingsForm { get; set; }
+        		
 		private bool validtarget;
 		private bool interrupter;
 		private bool interrupterCD;
