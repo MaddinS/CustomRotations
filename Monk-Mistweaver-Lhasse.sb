@@ -13,6 +13,7 @@ Spell,116680,ThunderFocusTea,D2
 Spell,198664,InvokeChiJitheRedCrane,D3
 Spell,116694,Effuse,D4
 Spell,115151,RenewingMist,D5
+Spell,196725,RJW,OemPeriod
 Spell,191837,EssenceFont,Q
 Spell,115310,Revival,Y
 Spell,107428,RSK,U
@@ -29,4 +30,6 @@ Aura,205406,SheilunsGift
 Aura,246328,SoM
 Aura,197916,CheapVivify
 Aura,197919,CheapEM
+Aura,240447,Quake
+Aura,240559,Grievous
 */
