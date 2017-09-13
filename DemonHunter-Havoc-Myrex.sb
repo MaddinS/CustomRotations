@@ -1,10 +1,12 @@
-﻿/*
+/*
 [AddonDetails.db]
 AddonAuthor=Myrex
 AddonName=Frozen
 WoWVersion=Legion - 70300
 [SpellBook.db]
-Spell,206491,Nemesis,E
+Spell,206491,Nemesis,D9
+Spell,198793,VengeRetreat,E
+Spell,195072,FelRush,D1
 Spell,191427,Metamorphosis,F
 Spell,247938,ChaosBlades,T
 Spell,201467,FOTI,D3
@@ -21,5 +23,5 @@ Aura,162264,Metamorphosis
 Aura,247938,ChaosBlades
 Aura,206491,Nemesis
 Aura,207690,Bloodlet
-
+Aura,198793,VengeRetreat
 */
