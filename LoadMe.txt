@@ -44,5 +44,5 @@ Druid-Guardian-smartie.fzn
 Druid-Guardian-smartie.sb
 Rogue-Subtlety-Zanrub.cs
 Rogue-Outlaw-Creepyjoker.cs
-DemonHunter-Vengeance-Myrex.cs
+DemonHunter-Vengeance-Myrex.fzn
 DemonHunter-Vengeance-Myrex.sb
