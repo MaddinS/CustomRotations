@@ -27,7 +27,7 @@ namespace Frozen.Rotation
         {
             if (WoW.HasTarget && WoW.TargetIsEnemy && WoW.IsSpellInRange("Bloodthirst"))
             {
-                if (WoW.CanCast("BattleCry")  && !WoW.PlayerHasBuff("BattleCryBuff") && WoW.PlayerHasBuff("Enrage"))
+                if (WoW.CanCast("BattleCry")  && !WoW.PlayerHasBuff("BattleCryBuff"))
                 {
                     WoW.CastSpell("BattleCry");
                     return;
