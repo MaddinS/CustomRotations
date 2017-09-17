@@ -46,3 +46,4 @@ Rogue-Subtlety-Zanrub.cs
 Rogue-Outlaw-Creepyjoker.cs
 DemonHunter-Vengeance-Myrex.fzn
 DemonHunter-Vengeance-Myrex.sb
+Warrior-Fury-1chu.cs
