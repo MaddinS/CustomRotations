@@ -27,12 +27,12 @@ namespace Frozen.Rotation
         {
             if (WoW.HasTarget && WoW.TargetIsEnemy && WoW.IsSpellInRange("Bloodthirst"))
             {
-                if (WoW.CanCast("BattleCry")  && !WoW.PlayerHasBuff("BattleCryBuff"))
+                if (WoW.CanCast("BattleCry")  && !WoW.PlayerHasBuff("BattleCryBuff") && WoW.Rage > 20)
                 {
                     WoW.CastSpell("BattleCry");
                     return;
                 }
-                if (WoW.CanCast("OdynsFury") && WoW.PlayerHasBuff("BattleCryBuff"))
+                if (WoW.CanCast("OdynsFury") && WoW.PlayerHasBuff("BattleCryBuff") && WoW.PlayerHasBuff("Frothing"))
                 {
                     WoW.CastSpell("OdynsFury");
                     return;
@@ -43,7 +43,7 @@ namespace Frozen.Rotation
             if (combatRoutine.Type == RotationType.SingleTarget && WoW.TargetHealthPercent >= 21) // Do Single Target Stuff here
                 if (WoW.HasTarget && WoW.TargetIsEnemy && WoW.IsSpellInRange("Bloodthirst"))
                 {
-                    if (WoW.CanCast("Raging Blow") && WoW.PlayerHasBuff("Enrage") || WoW.Rage <= 99 && WoW.IsSpellOnCooldown("Bloodthirst") && WoW.CanCast("Raging Blow"))
+                    if (WoW.CanCast("Raging Blow") && WoW.PlayerHasBuff("Enrage") || WoW.Rage <= 95 && WoW.IsSpellOnCooldown("Bloodthirst") && WoW.CanCast("Raging Blow"))
                     {
                         WoW.CastSpell("Raging Blow");
                         return;
@@ -55,7 +55,7 @@ namespace Frozen.Rotation
                         return;
                     }
 
-					if (WoW.CanCast("Bloodthirst") && WoW.Rage < 100 || WoW.CanCast("Bloodthirst") && !WoW.PlayerHasBuff("Enrage") && WoW.IsSpellOnCooldown("Raging Blow"))
+					if (WoW.CanCast("Bloodthirst") && WoW.Rage <= 90 || WoW.CanCast("Bloodthirst") && !WoW.PlayerHasBuff("Enrage") && WoW.IsSpellOnCooldown("Raging Blow"))
                     {
                         WoW.CastSpell("Bloodthirst");
                         return;
