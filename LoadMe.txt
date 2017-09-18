@@ -42,3 +42,10 @@ Paladin-Protection-smartie.fzn
 Paladin-Protection-smartie.sb
 Druid-Guardian-smartie.fzn
 Druid-Guardian-smartie.sb
+Rogue-Subtlety-Zanrub.cs
+Rogue-Outlaw-Creepyjoker.cs
+DemonHunter-Vengeance-Myrex.fzn
+DemonHunter-Vengeance-Myrex.sb
+Warrior-Fury-1chu.cs
+Monk-MistweaverPvP-Lhasse.fzn
+Monk-MistweaverPvP-Lhasse.sb

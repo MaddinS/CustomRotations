@@ -1,0 +1,33 @@
+/*
+[AddonDetails.db]
+AddonAuthor=Lesion
+AddonName=Frozen
+WoWVersion=Legion - 70300
+[SpellBook.db]
+Spell,203782,Shear,D1
+Spell,235964,Sever,D1
+Spell,228477,Soul Cleave,D3
+Spell,207407,Soul Carver,D5
+Spell,178740,Immolation Aura,F2
+Spell,204596,Sigil of Flame,D2
+Spell,204157,Throw Glaive,None
+Spell,207682,Sigal of Silence,D6
+Spell,202719,Arcane Torrent,F6
+Spell,187827,Metamorphasis,F4
+Spell,204021,Fiery Brand,F7
+Spell,218679,Spirit Bomb,D9
+Spell,203720,Demon Spikes,E
+Spell,189110,Infernal Strike,F5
+Spell,209795,Fracture,D7
+Spell,227225,Soul Barrier,F1
+Spell,211881,Fel Eruption,None
+Spell,212084,Fel Devastation,None
+Spell,232893,Felblade,None
+Spell,183752,Consume Magic,F6
+Aura,203819,Demon Spikes
+Aura,204598,Sigil of Flame
+Aura,212818,Fiery Demise
+Aura,187827,Metamorphasis
+Aura,224509,Frailty
+Aura,203981,Soul Fragments
+*/
