@@ -27,7 +27,7 @@ namespace Frozen.Rotation
         {
             if (WoW.HasTarget && WoW.TargetIsEnemy && WoW.IsSpellInRange("Bloodthirst"))
             {
-                if (WoW.CanCast("BattleCry")  && !WoW.PlayerHasBuff("BattleCryBuff") && WoW.Rage > 20)
+                if (WoW.CanCast("BattleCry")  && !WoW.PlayerHasBuff("BattleCryBuff") && WoW.Rage < 20)
                 {
                     WoW.CastSpell("BattleCry");
                     return;
@@ -119,7 +119,7 @@ namespace Frozen.Rotation
                         WoW.CastSpell("Whirlwind");
                         return;
 					}
-					if (WoW.CanCast("Bloodthirst") && WoW.Rage < 100 && WoW.CountEnemyNPCsInRange < 8 && WoW.PlayerHasBuff("Meat-Cleaver") || WoW.CanCast("Bloodthirst") && !WoW.PlayerHasBuff("Enrage") && WoW.IsSpellOnCooldown("Raging Blow"))
+					if (WoW.CanCast("Bloodthirst") && WoW.Rage <= 90 && WoW.CountEnemyNPCsInRange < 8 && WoW.PlayerHasBuff("Meat-Cleaver") || WoW.CanCast("Bloodthirst") && !WoW.PlayerHasBuff("Enrage") && WoW.IsSpellOnCooldown("Raging Blow"))
                     {
                         WoW.CastSpell("Bloodthirst");
                         return;
