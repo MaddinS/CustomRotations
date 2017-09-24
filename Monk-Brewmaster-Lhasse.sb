@@ -1,0 +1,33 @@
+/*
+[AddonDetails.db]
+AddonAuthor=Lhasse
+AddonName=Frozen
+WoWVersion=Legion - 70300
+[SpellBook.db]
+Spell,121253,Keg Smash,D1
+Spell,115181,Breath of Fire,D2
+Spell,100780,Tiger Palm,D3
+Spell,205523,Blackout Strike,D4
+Spell,115308,Ironskin Brew,D5
+Spell,119582,Purifying Brew,F
+Spell,116705,Spear Hand Strike,R
+Spell,119381,Leg Sweep,Q
+Spell,115072,Expel Harm,Y
+Spell,214326,Exploding Keg,F12
+Spell,116847,RJW,X
+Spell,116694,Effuse,E
+Spell,129597,ArcaneTorrent,Z
+Spell,115203,FortifyingBrew,T
+Spell,117952,CJL,U
+Spell,115399,BlackOxBrew,O
+Spell,122281,HealingElixier,P
+Aura,116847,RJW
+Aura,121253,Keg Smash
+Aura,115181,Breath of Fire
+Aura,228563,Blackout Combo
+Aura,115308,Ironskin Brew
+Aura,124275,Light Stagger
+Aura,124274,Moderate Stagger
+Aura,124273,Heavy Stagger
+Aura,196607,Eye of the Tiger
+*/
