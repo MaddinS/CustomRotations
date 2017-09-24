@@ -49,3 +49,5 @@ DemonHunter-Vengeance-Myrex.sb
 Warrior-Fury-1chu.cs
 Monk-MistweaverPvP-Lhasse.fzn
 Monk-MistweaverPvP-Lhasse.sb
+Monk-Brewmaster-Lhasse.fzn
+Monk-Brewmaster-Lhasse.sb
