@@ -9,10 +9,7 @@ namespace Frozen.Rotation
     {
               
         public override Form SettingsForm { get; set; }
-		
-			
-	
-	   
+			   
         public override void Initialize()
         {
             Log.Write("Welcome to Fury Warrior", Color.Green);
@@ -24,41 +21,48 @@ namespace Frozen.Rotation
         }
 
         public override void Pulse()
-        {
+        {	
+
             if (WoW.HasTarget && WoW.TargetIsEnemy && WoW.IsSpellInRange("Bloodthirst"))
             {
                 if (WoW.CanCast("BattleCry")  && !WoW.PlayerHasBuff("BattleCryBuff") && WoW.Rage <= 20)
                 {
-                    WoW.CastSpell("BattleCry");
+					WoW.CastSpell("BattleCry");
                     return;
                 }
-				
+
 				if (WoW.CanCast("OdynsFury") && WoW.PlayerHasBuff("BattleCryBuff") && WoW.PlayerHasBuff("Frothing"))
 				{
-						WoW.CastSpell("OdynsFury");
-						return;
+					WoW.CastSpell("OdynsFury");
+					return;
 				}
-			
+
 				if (WoW.PlayerHasBuff("Enraged Regeneration") && WoW.CanCast("Bloodthirst"))
                 {
                     WoW.CastSpell("Bloodthirst");
                     return;
                 }
-				
+
 				if (WoW.CanCast("Furious Slash") && WoW.IsSpellOnCooldown("Bloodthirst") && WoW.PlayerHasBuff("Enraged Regeneration"))
                 {
                     WoW.CastSpell("Furious Slash");
                     return;
                 }
-                
+
 				if (WoW.CanCast("Raging Blow") && WoW.IsSpellOnCooldown("Bloodthirst") && WoW.IsSpellOnCooldown("Furious Slash") && WoW.PlayerHasBuff("Enraged Regeneration"))
                 {
                     WoW.CastSpell("Raging Blow");
                     return;
-                }
-				
-            }
+                }				
 
+            }
+			
+			if (WoW.TargetHealthPercent == 0 && WoW.IsInCombat && WoW.RangeToTarget >= 5 && WoW.CountEnemyNPCsInRange >= 1 && !WoW.IsMounted|| !WoW.HasTarget && WoW.IsInCombat && WoW.CountEnemyNPCsInRange >= 1 && WoW.RangeToTarget >=1 && !WoW.IsMounted) 
+			{
+				WoW.TargetNearestEnemy();
+				return;
+			}
+			
             if (combatRoutine.Type == RotationType.SingleTarget && WoW.TargetHealthPercent >= 21 && !WoW.PlayerHasBuff("BattleCryBuff")) // Do Single Target Stuff here
                 if (WoW.HasTarget && WoW.TargetIsEnemy && WoW.IsSpellInRange("Bloodthirst"))
                 {
@@ -67,31 +71,31 @@ namespace Frozen.Rotation
                         WoW.CastSpell("Rampage");
                         return;
                     }
-					
+
 					if (WoW.CanCast("Bloodthirst") && WoW.Rage < 100 && !WoW.PlayerHasBuff("Enrage") || (WoW.CanCast("Bloodthirst") && WoW.IsSpellOnCooldown("Raging Blow") && WoW.Rage < 100))
                     {
                         WoW.CastSpell("Bloodthirst");
                         return;
                     }
-					
+
                     if (WoW.CanCast("Raging Blow") && WoW.IsSpellOnCooldown("Bloodthirst") && WoW.Rage < 100)
                     {
                         WoW.CastSpell("Raging Blow");
                         return;
                     }
-					
+
 					if (WoW.CanCast("Whirlwind") && WoW.IsSpellOnCooldown("Bloodthirst") && WoW.IsSpellOnCooldown("Raging Blow") && WoW.PlayerHasBuff("Wrecking Ball"))
                     {
                         WoW.CastSpell("Whirlwind");
                         return;
                     }
-													
+
 					if (WoW.CanCast("Furious Slash") && WoW.IsSpellOnCooldown("Bloodthirst") && WoW.IsSpellOnCooldown("Raging Blow") && WoW.Rage < 100)
                     {
                         WoW.CastSpell("Furious Slash");
                         return;
                     }
-					
+
 					if (WoW.CanCast("Berserker Rage") && WoW.PlayerHasBuff("Fear"))
                     {
                         WoW.CastSpell("Berserker Rage");
@@ -108,19 +112,19 @@ namespace Frozen.Rotation
                         WoW.CastSpell("Rampage");
                         return;
                     }
-					
+
                     if (WoW.CanCast("Raging Blow") && WoW.PlayerHasBuff("Enrage") && WoW.PlayerHasBuff("Frothing") && WoW.Rage < 100 || WoW.CanCast("Raging Blow") && WoW.IsSpellOnCooldown("Bloodthirst"))
                     {
                         WoW.CastSpell("Raging Blow");
                         return;
                     }
-					
+
 					if (WoW.CanCast("Bloodthirst") && WoW.Rage < 100 && WoW.IsSpellOnCooldown("Raging Blow"))
                     {
                         WoW.CastSpell("Bloodthirst");
                         return;
                     }
-					
+
                 }
 
 			if (combatRoutine.Type == RotationType.SingleTarget && WoW.TargetHealthPercent <= 20 && WoW.SpellCooldownTimeRemaining("BattleCry") >= 1100) // Do Single Target Execute Stuff here
@@ -131,19 +135,19 @@ namespace Frozen.Rotation
                         WoW.CastSpell("Execute");
                         return;
 					}
-					
+
 					if (WoW.CanCast("Bloodthirst") && WoW.Rage < 100)
                     {
                         WoW.CastSpell("Bloodthirst");
                         return;
                     }
-					
+
                     if (WoW.CanCast("Raging Blow") && WoW.Rage < 100 && WoW.IsSpellOnCooldown("Bloodthirst"))
                     {
                         WoW.CastSpell("Raging Blow");
                         return;
                     }
-					
+
 					if (WoW.CanCast("Furious Slash") && WoW.IsSpellOnCooldown("Bloodthirst") && WoW.IsSpellOnCooldown("Raging Blow"))
                     {
                         WoW.CastSpell("Furious Slash");
@@ -160,19 +164,19 @@ namespace Frozen.Rotation
                         WoW.CastSpell("Execute");
                         return;
 					}
-					
+
 					if (WoW.CanCast("Execute") && WoW.Rage >=25)
                     {
                         WoW.CastSpell("Execute");
                         return;
                     }
-					
+
 					if (WoW.CanCast("Bloodthirst") && WoW.Rage < 25)
                     {
                         WoW.CastSpell("Bloodthirst");
                         return;
                     }
-					
+
                     if (WoW.CanCast("Raging Blow") && WoW.Rage < 25 && WoW.IsSpellOnCooldown("Bloodthirst"))
                     {
                         WoW.CastSpell("Raging Blow");
@@ -180,7 +184,7 @@ namespace Frozen.Rotation
                     }
 
                 }
-                            
+				
 
             if (combatRoutine.Type == RotationType.AOE)
                 if (WoW.HasTarget && WoW.IsSpellInRange("Bloodthirst") && WoW.IsInCombat)
@@ -190,24 +194,28 @@ namespace Frozen.Rotation
                         WoW.CastSpell("Whirlwind");
                         return;
 					}
-					
+
 					if (WoW.CanCast("Rampage") && WoW.Rage >= 100 && WoW.PlayerHasBuff("Meat-Cleaver"))
                     {
                         WoW.CastSpell("Rampage");
                         return;
                     }
-					
+
 					if (WoW.CanCast("Bloodthirst") && WoW.Rage < 100 && WoW.CountEnemyNPCsInRange < 8 && WoW.PlayerHasBuff("Meat-Cleaver") && !WoW.PlayerHasBuff("Enrage"))
                     {
                         WoW.CastSpell("Bloodthirst");
                         return;
                     }
-					
+
 					if (WoW.CanCast("Raging Blow") && WoW.PlayerHasBuff("Enrage") && WoW.CountEnemyNPCsInRange < 4)
                     {
                         WoW.CastSpell("Raging Blow");
                         return;
                     }
+
+					if (WoW.TargetHealthPercent == 0 && WoW.CountEnemyNPCsInRange >= 1) 
+					WoW.TargetNearestEnemy();
+					if (WoW.RangeToTarget >= 5) return;
 
 					//if (WoW.CanCast("Furious Slash") && WoW.IsSpellOnCooldown("Bloodthirst") && WoW.IsSpellOnCooldown("Raging Blow"))
                     //{
