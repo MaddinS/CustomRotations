@@ -1,4 +1,4 @@
-/*
+/*/*
 [AddonDetails.db]
 AddonAuthor=Lhasse
 AddonName=Frozen
@@ -30,4 +30,5 @@ Aura,124275,Light Stagger
 Aura,124274,Moderate Stagger
 Aura,124273,Heavy Stagger
 Aura,196607,Eye of the Tiger
+Aura,250437,LightforgedWarframe
 */
