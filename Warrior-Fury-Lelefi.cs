@@ -90,7 +90,7 @@ namespace Frozen.Rotation
                         return;
                     }
 
-					if (WoW.CanCast("Furious Slash") && WoW.IsSpellOnCooldown("Bloodthirst") && WoW.IsSpellOnCooldown("Raging Blow") && WoW.Rage < 100)
+					if (WoW.CanCast("Furious Slash") && WoW.IsSpellOnCooldown("Bloodthirst") && WoW.IsSpellOnCooldown("Raging Blow") && WoW.Rage < 90)
                     {
                         WoW.CastSpell("Furious Slash");
                         return;
@@ -212,10 +212,6 @@ namespace Frozen.Rotation
                         WoW.CastSpell("Raging Blow");
                         return;
                     }
-
-					if (WoW.TargetHealthPercent == 0 && WoW.CountEnemyNPCsInRange >= 1) 
-					WoW.TargetNearestEnemy();
-					if (WoW.RangeToTarget >= 5) return;
 
 					//if (WoW.CanCast("Furious Slash") && WoW.IsSpellOnCooldown("Bloodthirst") && WoW.IsSpellOnCooldown("Raging Blow"))
                     //{
