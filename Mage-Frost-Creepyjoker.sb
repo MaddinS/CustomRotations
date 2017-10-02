@@ -9,7 +9,7 @@ Spell,84714,Frozen Orb,X
 Spell,30455,Ice Lance,D2
 Spell,44614,Flurry,D4
 Spell,199786,Glacial Spike,D3
-Spell,190356,Blizzard,D0
+Spell,190356,Blizzard,R
 Spell,214634,Ebonbolt,C
 Spell,12472,Icy Veins,D5
 Spell,116011,Rune of Power,D3
@@ -17,6 +17,7 @@ Spell,11426,Ice Barrier,E
 Spell,45438,Ice Block,D8
 Aura,195418,Chain Reaction
 Aura,45438,Ice Block
+Aura,228358,WinterChill
 Aura,205473,Icicles
 Aura,12472,Icy Veins
 Aura,199844,Spaicus
@@ -26,6 +27,11 @@ Aura,44544,Fingers of Frost
 Aura,190446,Brain Freeze
 Aura,76613,Mastery: Icicles
 Aura,66,Invisibility
+Aura,80353,Time Warp
+Aura,32182,Heroism
+Aura,90355,Ancient Hysteria
+Aura,160452,Netherwinds
+Aura,178208,Drums of Fury
 Aura,116014,Rune of Power
 Aura,11426,Ice Barrier
 Aura,108839,Ice Floes
