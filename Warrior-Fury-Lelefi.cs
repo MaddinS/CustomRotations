@@ -32,10 +32,10 @@ namespace Frozen.Rotation
 
             if (WoW.HasTarget && WoW.TargetIsEnemy && WoW.IsSpellInRange("Bloodthirst"))
             {
-                WoW.CastSpell("BattleCry", !WoW.PlayerHasBuff("BattleCryBuff") && WoW.Rage <= 20 && WoW.CooldownsOn == true);
+                WoW.CastSpell("BattleCry", !WoW.PlayerHasBuff("BattleCryBuff") && WoW.CooldownsOn == true);
+				WoW.CastSpell("Avatar", WoW.Talent(3) == 3 && WoW.PlayerHasBuff("BattleCryBuff"));
                 WoW.CastSpell("OdynsFury", WoW.PlayerHasBuff("BattleCryBuff") && WoW.PlayerHasBuff("Frothing"));
 				WoW.CastSpell("Bloodthirst", WoW.PlayerHasBuff("Enraged Regeneration"));
-				WoW.CastSpell("Avatar", WoW.Talent(3) == 3 && WoW.PlayerHasBuff("BattleCryBuff"));
 				WoW.CastSpell("Furious Slash", WoW.IsSpellOnCooldown("Bloodthirst") && WoW.PlayerHasBuff("Enraged Regeneration"));
 				WoW.CastSpell("Raging Blow", WoW.IsSpellOnCooldown("Bloodthirst") && WoW.IsSpellOnCooldown("Furious Slash") && WoW.PlayerHasBuff("Enraged Regeneration"));
             }
@@ -111,10 +111,10 @@ Spell,100130,Furious Slash,D5
 Spell,5308,Execute,D6
 Spell,184367,Rampage,D7
 Spell,190411,Whirlwind,D8
-Spell,1719,BattleCry,D9
-Spell,118000,DragonRoar,T
+Spell,1719,BattleCry,R
+Spell,118000,DragonRoar,-
 Spell,107574,Avatar,D0
-Spell,205545,OdynsFury,G
+Spell,205545,OdynsFury,T
 Spell,18499,Berserker Rage,U
 Aura,118000,DragonRoarBuff
 Aura,1719,BattleCryBuff
@@ -127,4 +127,5 @@ Aura,215570,Wrecking Ball
 Aura,215572,Frothing
 Aura,184364,Enraged Regeneration
 Aura,118699,Fear
+Aura,107574,AvatarBuff
 */
