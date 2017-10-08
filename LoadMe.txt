@@ -51,3 +51,5 @@ Monk-MistweaverPvP-Lhasse.fzn
 Monk-MistweaverPvP-Lhasse.sb
 Monk-Brewmaster-Lhasse.fzn
 Monk-Brewmaster-Lhasse.sb
+Warrior-Arms-Lhasse.fzn
+Warrior-Arms-Lhasse.sb
